@@ -183,7 +183,7 @@ Debug('#################################################################');
  * ****************************************************************************/
 
     function MinimizeTV(){
-            Video.setVideoPosition(TvPositionLeft, TvPositionTop, WindowMinWidth, WindowMinHeight, 0);
+            Video.setVideoPosition((13.5*WindowMaxWidth)/100, (5*WindowMaxWidth)/100, WindowMinWidth, WindowMinHeight, 0);
     }
 
 /* *****************************************************************************
