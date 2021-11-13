@@ -2209,8 +2209,8 @@ kza8/olNGg==</DigestValue>
 </Reference>
 <Reference URI="Views%2FLayouts%2FContents%2FTemplates%2FMultimediaFromFolder.tpl">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>0YGwrKpgnHtwcZ3AwvGqcQxll4BsvFpbzyGTGEV3zFgw6G5mnYYDf/bY9Njrg136m/hRv8Khex5d
-+3lxSRxjPQ==</DigestValue>
+<DigestValue>5WpFDYTAVd/V79O6hhVQ+Zefc/y6N8Bweoa/Km+b1HuAQ0pbh076weux834uhKeCmq8DBuDN5qQ3
+GJSNEpRmbw==</DigestValue>
 </Reference>
 <Reference URI="Views%2FLayouts%2FContents%2FTemplates%2FTest.tpl">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -2244,8 +2244,8 @@ JJ+f7FdfFA==</DigestValue>
 </Reference>
 <Reference URI="Views%2FLayouts%2FInitial%2FIndex.tpl">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>XyGgNCw5uHQ0p3bGsQBFsorEAJw5euZlYgUi5TFvq4sr1bJWEqkX4wcr8npX/MoyHk/iZQFoEJQq
-SJqqrm1UFA==</DigestValue>
+<DigestValue>bdPOSbqoM5q/aY/15O3XCmfen/9vExkl4TxNRBKtnxQ4HIgbHMFtbjTXVzBtqrr4uY/rSeRAPzRI
+vZb3Mo0B2g==</DigestValue>
 </Reference>
 <Reference URI="Views%2FLayouts%2FInitial%2FLicense.tpl">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -2269,8 +2269,8 @@ x1muzCQJxA==</DigestValue>
 </Reference>
 <Reference URI="Views%2FLayouts%2FMenu%2FScripts%2FMinimalist.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>ZX5fdm2/WlFrU/IG9dOIsgDH7ffpQ8+Lm3TxEdvw9xrWp4YLLD8gj8gAJz2ryPXZ3tLsF3xjZA5S
-rEjHyxb43Q==</DigestValue>
+<DigestValue>GmV3ECKFG8Z9qBO9z1YQmNHK1SYVfUX5TOZt0CaEwCbJ9DuIKuUaq0r8779Yo1g1IyMNIj6Yyzb3
+AFWXB3fXog==</DigestValue>
 </Reference>
 <Reference URI="Views%2FLayouts%2FMenu%2FScripts%2FMinimalist2.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -2819,8 +2819,8 @@ mHJsDuNFow==</DigestValue>
 </Reference>
 <Reference URI="Views%2FScripts%2FGeneral.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>rkji8NE1eLyxKtyqJ463ohiwOQAIotADgCS3TQywbQdidZFkkp5FsmQGKv5k2lEtc608FigC+OU/
-WoA352Hhbg==</DigestValue>
+<DigestValue>rtlyDAORGbswqkeuKpNSpz4svRXuivdr/71Cne4GDKigEG/jzWjEg03HCU1pqsePVoNXJ0pV0ygC
+rwE+NeZP+Q==</DigestValue>
 </Reference>
 <Reference URI="Views%2FScripts%2FMUKUL%2FCommands.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -2839,8 +2839,8 @@ lZCBu+JH4A==</DigestValue>
 </Reference>
 <Reference URI="Views%2FScripts%2FTv.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>ahNidZLgb3UdrsBuouDgyECvHjvRmsJSocQshjXaOMSDok6q9y+pWYmJSGkyU4d1CG88nLgSyb47
-h8YErfKdoQ==</DigestValue>
+<DigestValue>ZSUUK9g/GNf/8V24f6axPBvsYloi2EP/lXJsI2mzgAOJtAoCnY7U33nkeCrYfT7BkYoP3/5qeszM
+g4CFhqwfPA==</DigestValue>
 </Reference>
 <Reference URI="Views%2FScripts%2FVDM%2FCommands.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -3402,6 +3402,11 @@ EgjLwWQMsQ==</DigestValue>
 <DigestValue>PJ7nKGOnw2EkO/6UWrUErvR4EiWZIj0VNCBX5lte64Fm7G0UPERiWUNJUWAZIlW/V8/GpJe7laAH
 YdNuQ5SBMQ==</DigestValue>
 </Reference>
+<Reference URI="bbinco_1_1.wgt">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>oToQlODSuys65KLVYRNgEquQuv8o3jUcB0Eog76MsZueUVd5dv/P2vATTd5TV88xUwFT5dUCDzwS
+7ghnXxJ1qg==</DigestValue>
+</Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
 <DigestValue>OLyk0Ovbqc22EXR+y6CFZpltW/gztocm6FhkLUANViaFFGnKkwjt4p0z1WGW3hEpQZU/6f1+o2yt
@@ -3487,9 +3492,9 @@ QY10fG1EWQ==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-U2JJUoUProQLlT58S1NtR31Ukv/aNiMxiLFRe5RlFXPsCTx30wj9XXZxR/5q6bkU15el6eb5VVEP
-POBhCM5NxVSRycZ+fTkgVoJD3SUsTTbdth32zJI50J8XZBnlRtvvrH9T2+1PbBC2nVClW2gY4CiH
-D9KFlaFJltkhzLJONQY=
+WARa1t/DIfeAokNLb008VnmEUwwPoASE5zFTmkMKPHbukeJHGI0xvsDM9UAxQbM4DXxlAkOe2rq3
+eiiDOlADUHhrcVN5XJonEsXzKV0x8r90lv5ybCczPjTfKQd5xuw/JZaU8EznMRMH439T8JESflZq
+kXn0+xbkGow+n5kNPKQ=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
