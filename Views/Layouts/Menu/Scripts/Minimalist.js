@@ -33,12 +33,11 @@ function SetMenuList(){
         success: function (response){
             
             MenuList = $.parseJSON(response);
-            
-            
+            SetMenuInfo();
         }
     });
    
-    SetMenuInfo();
+    
 }
 GetWeather();
 SetMenuList();
