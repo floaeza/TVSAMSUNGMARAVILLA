@@ -39,11 +39,10 @@
     function GoPage(Page, ModuleId, ChangeModule){
         //alert('Pagina: '+ Page+'Module Id: '+ ModuleId+'CangeModule: '+ChangeModule);
         ////Debug(ModuleId + "  " + OnScreen + "  " + ChannelPosition);
-        updateDataModule(ModuleId);
+        //updateDataModule(ModuleId);
 
         ////Debug('GoPage ---> '+Page);
-        if(CurrentModule !== 'Menu'){
-        }
+        
         //if(CurrentModule === 'Tv' && StartDateChannel !== ''){
         if(CurrentModule === 'Tv'){
             //Debug('TVCLOSE & SETCHANNELSTATISTICS');
@@ -51,26 +50,6 @@
             TvClose();
             //SetChannelStatistics();
         }
-        ////Debug('StopVideo ---> ');
-
-        //SetModuleStatistics();
-        
-        ////Debug('SetModuleStatistics ---> ');
-        
-        ////Debug(Page+'?MacAddress='+MacAddress+'&ModuleId='+ModuleId+'&CurrentModule='+ChangeModule);
-
-        // if(typeof(ASTB) !== 'undefined' || MacAddress == '00:00:00:00:00:00'){
-        //     //parent.document.getElementById('Menu').src=Page+'?MacAddress='+MacAddress+'&ModuleId='+ModuleId+'&CurrentModule='+ChangeModule;
-
-        //     for(var i = 0; parent.document.getElementsByTagName('iframe').length; i++){
-        //         parent.document.getElementsByTagName('iframe')[i].style.width='0%';
-        //         parent.document.getElementsByTagName('iframe')[i].style.height='0%';
-        //     }
-        //     parent.document.getElementById(ChangeModule).style.width='100%';
-        //     parent.document.getElementById(ChangeModule).style.height='100%';
-        //     parent.document.getElementById(ChangeModule).focus();
-
-        // }else{
             if (window.tizen !== undefined) {
 
                 //Debug('Window.tizen !== undefined');
@@ -81,24 +60,15 @@
                 localStorage.setItem('Module', ChangeModule);
                 localStorage.setItem('Id', ModuleId);
     
-                //location.replace(PageH);
-                window.location.href = PageH;
+                location.replace(PageH);
+                //window.location.href = PageH;
                 
             } else {
-                ////Debug('>>>>>>> LOCATION.REPLACE');
-                //Executing = true;
-                //location.replace(Page+'?MacAddress='+MacAddress+'&ModuleId='+ModuleId+'&CurrentModule='+ChangeModule);
-    
-                //location.replace(Page+'?MacAddress='+MacAddress+'&ModuleId='+ModuleId+'&CurrentModule='+ChangeModule);
-                //  if(typeof(ASTB) !== 'undefined'){
-                //      Browser.Go('http://172.22.22.10/BBINCO/TV/' + Page+'?MacAddress='+MacAddress+'&ModuleId='+ModuleId+'&CurrentModule='+ChangeModule)
-                //  }else{
                 if(typeof(ASTB) !== 'undefined'){
                     location.href= Page+'?MacAddress='+MacAddress+'&ModuleId='+ModuleId+'&CurrentModule='+ChangeModule;
                 }else{
                     window.location.href = Page+'?MacAddress='+MacAddress+'&ModuleId='+ModuleId+'&CurrentModule='+ChangeModule;
                 }
-                
             }
         }
     //}

@@ -9,7 +9,7 @@ window.history.forward(1);
 var MenuListNodes   = document.getElementsByClassName('MenuList');
 //MenuSelected    = document.getElementById('MenuSelected'),
 //BackgroundsNodes = '';
-var ImagesUrl       = ServerSource+'Media/Menu/',
+var ImagesUrl   = ServerSource+'Media/Menu/',
 FormatDate      = '',
 FormatHour      = '',
 MenuList        = '',
@@ -49,12 +49,10 @@ function SetMenuInfo(){
 *******************************************************************************/
 
 function MenuOk(){
-    
     if(MenuList[MenuIndex].Url !== 'menu.php'){
         //Page, ModuleId, ChangeModule
         GoPage(MenuList[MenuIndex].Url, MenuList[MenuIndex].Id, MenuList[MenuIndex].Name);
     }
-    
 }
 
 function MenuRight(){
