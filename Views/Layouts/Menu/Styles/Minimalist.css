@@ -124,9 +124,9 @@ div#TemperatureGroup {
 }
 
 div#MenuBar {
-  color: #fff;
+  color: rgb(0, 0, 0);
   width: 70%;
-  /*background: rgba(0, 0, 0, 0.7);*/ 
+  background: rgba(255, 255, 255, 0.7);
   position: absolute;
   bottom: 11%;
   height: 7%;

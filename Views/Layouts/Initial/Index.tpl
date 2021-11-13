@@ -302,7 +302,7 @@
                         
                     }else{
                         window.location.href = Data['ModuleUrl']+'?MacAddress='+MacAddress+'&ModuleId='+Data['ModuleId']+'&CurrentModule='+Data['ModuleName'];
-                        //window.location.href = 'http://172.22.22.10//BBINCO/Admin/Views/Boards/DRIFT.html';
+                        //window.location.href = 'http://172.22.22.10/BBINCO/Admin/Views/Boards/DRIFT.html';
                     }
                     
                 } else if(Data['Option'] === 'LICENSE'){
@@ -312,7 +312,7 @@
                         location.href='index.php?Option='+Data['Option'];
                     }else{
                         window.location.href = 'index.php?Option='+Data['Option'];
-                        //window.location.href = 'http://172.22.22.10//BBINCO/Admin/Views/Boards/DRIFT.html';
+                        //window.location.href = 'http://172.22.22.10/BBINCO/Admin/Views/Boards/DRIFT.html';
                     }
                 }
             }
