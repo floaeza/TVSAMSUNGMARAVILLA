@@ -207,7 +207,7 @@ function MaximizeTV(){
  * ****************************************************************************/
 
 function MinimizeTV(){
-    Player.setDisplayRect(TvPositionLeft, TvPositionTop, WindowMinWidth, WindowMinHeight);
+    Player.setDisplayRect((13.5*WindowMaxWidth)/100, (5*WindowMaxWidth)/100, WindowMinWidth, WindowMinHeight);
 }
 
 /* *****************************************************************************
