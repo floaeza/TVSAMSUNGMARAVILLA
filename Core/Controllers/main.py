@@ -16,7 +16,7 @@ today = today
 listDays = ["", "", "", "", "", "", ""]
 
 payload = {'Option': 'GetIdentifier'}
-Identifier = requests.post('http://172.22.22.10BBINCO/TV/Core/Controllers/PY.php', data=payload)
+Identifier = requests.post('http://172.22.22.10/BBINCO/TV/Core/Controllers/PY.php', data=payload)
 IDF = json.loads(Identifier.content)
 IDF = IDF[0]
 
@@ -42,7 +42,7 @@ for n in range(7):
 
 ####Numero de paquetes + 1#########
 payload = {'Option': 'GetAllPackages'}
-Pack = requests.post('http://172.22.22.10BBINCO/TV/Core/Controllers/Packages.php', data=payload)
+Pack = requests.post('http://172.22.22.10/BBINCO/TV/Core/Controllers/Packages.php', data=payload)
 Packages = json.loads(Pack.content)
 
 def start(day, pos):
@@ -51,17 +51,17 @@ def start(day, pos):
     print("Empezo")
     
     payload = {'Option': 'GetVersion'}
-    Version = requests.post('http://172.22.22.10BBINCO/TV/Core/Controllers/PY.php', data=payload)
+    Version = requests.post('http://172.22.22.10/BBINCO/TV/Core/Controllers/PY.php', data=payload)
     Ver = json.loads(Version.content)
     Ver = Ver[0]
     
     payload = {'Option': 'GetOffsetZone'}
-    Zone = requests.post('http://172.22.22.10BBINCO/TV/Core/Controllers/PY.php', data=payload)
+    Zone = requests.post('http://172.22.22.10/BBINCO/TV/Core/Controllers/PY.php', data=payload)
     OffSetZone = json.loads(Zone.content)
     OffSetZone = OffSetZone[0]
 
     payload = {'Option': 'GetGatoTime'}
-    GTime = requests.post('http://172.22.22.10BBINCO/TV/Core/Controllers/PY.php', data=payload)
+    GTime = requests.post('http://172.22.22.10/BBINCO/TV/Core/Controllers/PY.php', data=payload)
     GatoTime = json.loads(GTime.content)
     GatoTime = GatoTime[0]
 
@@ -78,7 +78,7 @@ def start(day, pos):
 
 
         payload = {'Option': 'GetModulesBypackage', 'PackageID': int(Package["id_paquete"])}
-        x = requests.post('http://172.22.22.10BBINCO/TV/Core/Controllers/PY.php', data=payload)
+        x = requests.post('http://172.22.22.10/BBINCO/TV/Core/Controllers/PY.php', data=payload)
         channels = json.loads(x.content)
         for channel in channels:
             dataProgradm = {}
@@ -122,7 +122,7 @@ def start(day, pos):
         ############################################# PROGAMACION #############################################
         #######################################################################################################
         payload = {'Option': 'GetChannelsInfoBypackage', 'PackageID': int(Package["id_paquete"])}
-        x = requests.post('http://172.22.22.10BBINCO/TV/Core/Controllers/PY.php', data=payload)
+        x = requests.post('http://172.22.22.10/BBINCO/TV/Core/Controllers/PY.php', data=payload)
         channels = json.loads(x.content)
         #print(channels)
         
