@@ -34,13 +34,12 @@ setTimeout(function(){ GetWindowMinSize(); }, 2000);
  * ****************************************************************************/
 
 function PlayChannel(Source, Port){
-Debug('PlayChannel('+Source+', '+Port+')');
-    var CheckPort = '';
     clearTimeout(Checker);
+    Checker = null;
+    var CheckPort = '';
     if(Port){
         CheckPort = ':' + Port;
     }
-
     // Detiene el proceso de la reproduccion anterior
     StopVideo();
     Source = Source.replace('igmp','udp');
