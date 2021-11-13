@@ -3404,23 +3404,8 @@ YdNuQ5SBMQ==</DigestValue>
 </Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>4A9pgsJVtVNBNYiFYd5X1N+ZfwYBXtMEOm//RLpPowoehq0rMRaqVr++SdIy01V9+RLMTLmLT5Rs
-+FXh4c9M1A==</DigestValue>
-</Reference>
-<Reference URI="bbinco_1_1.wgt">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>oToQlODSuys65KLVYRNgEquQuv8o3jUcB0Eog76MsZueUVd5dv/P2vATTd5TV88xUwFT5dUCDzwS
-7ghnXxJ1qg==</DigestValue>
-</Reference>
-<Reference URI="bbinco_1_2.wgt">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>x+VmUtCpep63YmtjSjv84s81YHsS+vszpatPCk24YleHQlmQnH1TsoMQMVRp3hadTlwji/+2ryu+
-EwTwXS2nvg==</DigestValue>
-</Reference>
-<Reference URI="bbinco_1_3.wgt">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>8/sLseVgN5eLLOrvvLEgX1HE5PyZK3HiYV5cJ9D9OP1e4NTKV46ACJaorCBfeB2dy4eg+J2uMZEy
-AmHsVevnzQ==</DigestValue>
+<DigestValue>g7akA5wSvPFFW7TOCK3zAMI+0g26UoA3qDteevbkWcNCyYIK4qX2KF5OWoRBzMMJZ8LuZZLzpL2M
+PCqqzBZUxw==</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -3464,8 +3449,8 @@ Evus1IeW9g==</DigestValue>
 </Reference>
 <Reference URI="menu.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>5AtWpn4Az/FGwYD7JuC0ycni2EI4eiU5P7Ik1YI/CmpgEWtfIf/k0cwyIUZTS3R3zJP9oo4Rd9Wd
-b2mRjMzkAA==</DigestValue>
+<DigestValue>pN50xMfs+wof7rGLoOT1VMb/NhEePcM2eS5X6xNcud+dBr1l9oFgjHNB3opMUtDpcZ+NG+KhpHzX
+f+JgRSMa3A==</DigestValue>
 </Reference>
 <Reference URI="menu.php">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -3507,9 +3492,9 @@ GyvKX9Snig==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-r70ntSZt8VB5nms2iDRZIoh/L3qQYOXnNubvTCH7lq8/QkzWrQ7DepMDm6hKdqH9ch79nCz1ErbU
-jFsMKe7ZN5Pb0Yp0EDU+uxVaeWjhjQdnm/+NXAfUr9pLkkRpFPCuK9gvasghNF0z1p+I8qN/VaoY
-/Z//DFdeWAc5SKjkxao=
+Sxo1BesWv0BcvbKometjzBS1ZWtFE9rKK0OrISZGNDVBobVBDKKiAqEGSWqHxHXB1oXKGwtkdeUX
+nd/A/DI4T75QlRmqKoaa/d7R3iPZRJDvOiPaTT1VovVIikZgZdd+dm/kK3KUZAyfza/xrU8PtaoD
+DgqJ777oWsCp1i8STS8=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
