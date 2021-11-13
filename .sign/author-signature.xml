@@ -3444,8 +3444,8 @@ Evus1IeW9g==</DigestValue>
 </Reference>
 <Reference URI="menu.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>ozUfDjULf3urSpZtg2Qvd1uXM1ZZxf0FQriOM+GjoiAKEQ2xLvMepXfHNwt0jqN8JvOf+44C2p1B
-r3oprK2ClQ==</DigestValue>
+<DigestValue>HprDxqh5a0Erhuv/NTAeuiuegd3eYJgGMyxz0GKtiv0o6J6r2DT1C5JBG4+oWPxIbMRt2tpChVVD
+Yz2d+C2+bQ==</DigestValue>
 </Reference>
 <Reference URI="menu.php">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -3487,9 +3487,9 @@ QY10fG1EWQ==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-Shg5WxTZIhnyC2qbvpXEBRSgQ/q91p0hd/gmKeu4PFTSIl+6kPUgKfLWMefAI0MfiVyRU7ICP4RI
-2P9OZeH8ybPTMdVr9rXc7MdUwbvxkB2TnQ2MH7mgTlQOl49lY+4H+N1VElpZo7A0jLhxiT635dre
-4+iLgzC07LESNka/jDg=
+YFBhDxBq5fZiiLrM6WoJMdythCAJy8C9meKj0bNBT1kOathWZNJwb2bD2d/xO0ccHn9cSBxmNPFZ
+L2dfOcfVCbad7EMBQzildSLtXULxEoiCggDT03vCOUBNwGK0IN3WncKvn9YQsIsM8tIyXG2eYzg9
+rbgxSjsMzUerOH3qmJk=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
