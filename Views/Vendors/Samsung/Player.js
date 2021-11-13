@@ -36,7 +36,7 @@ setTimeout(function(){ GetWindowMinSize(); }, 2000);
 function PlayChannel(Source, Port){
 Debug('PlayChannel('+Source+', '+Port+')');
     var CheckPort = '';
-
+    clearTimeout(Checker);
     if(Port){
         CheckPort = ':' + Port;
     }
@@ -53,8 +53,6 @@ Debug('PlayChannel('+Source+', '+Port+')');
         Debug('Player.open : '+Source+CheckPort);
 
         // Maximiza el video en caso de que no este en pantalla completa
-        
-
         Player.prepareAsync(function() {
             Player.play();  
         });
@@ -64,10 +62,6 @@ Debug('PlayChannel('+Source+', '+Port+')');
     } catch (error) {
         Debug('PlayChannel > Error name = '+ error.name + ', Error message = ' + error.message);
     }
-
-
-    PlayDigita = false;
-
     // Activamos la bandera
     PlayingChannel   = true;
 
@@ -78,7 +72,6 @@ Debug('PlayChannel('+Source+', '+Port+')');
     if(StartDateChannel !== ''){
         SetChannelStatistics();
     }
-
     // Actualiza la fecha inicio de la reproduccion del canal */
     StartDateChannel = new Date();
 }
