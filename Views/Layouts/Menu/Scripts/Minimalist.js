@@ -29,7 +29,6 @@ function SetMenuList(){
             //ProjectId: Device['Services']['ProjectId']
         },
         success: function (response){
-            
             MenuList = $.parseJSON(response);
             SetMenuInfo();
         }
@@ -37,12 +36,11 @@ function SetMenuList(){
    
     
 }
-GetWeather();
 SetMenuList();
+GetWeather();
 //SetMenuInfo()
 
 function SetMenuInfo(){
-
     ((MenuIndex - 1) >= 0)?MenuListNodes[0].textContent = MenuList[MenuIndex-1].Name : MenuListNodes[0].textContent = MenuList[MenuList.length -1].Name;
     MenuListNodes[1].textContent = MenuList[MenuIndex].Name;
     ((MenuIndex + 1) <= (MenuList.length-1))?MenuListNodes[2].textContent = MenuList[MenuIndex+1].Name : MenuListNodes[2].textContent = MenuList[0].Name;
