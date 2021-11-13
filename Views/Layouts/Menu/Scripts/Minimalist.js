@@ -21,7 +21,6 @@ function SetMenuList(){
     $.ajax({
         type: 'POST',
         cache: false,
-        async: false,
         url: ServerSource + 'Core/Controllers/Menu.php',
         data: { 
             Option : 'GetModules',
