@@ -9,14 +9,12 @@ window.history.forward(1);
 var MenuListNodes   = document.getElementsByClassName('MenuList');
 //MenuSelected    = document.getElementById('MenuSelected'),
 //BackgroundsNodes = '';
-ImagesUrl       = ServerSource+'Media/Menu/',
+var ImagesUrl       = ServerSource+'Media/Menu/',
 FormatDate      = '',
 FormatHour      = '',
 MenuList        = '',
-
 MenuIndex       = 0,
-IndexM = null,
-xhr = null;
+IndexM = null;
 
 function SetMenuList(){
     MenuList = null;
