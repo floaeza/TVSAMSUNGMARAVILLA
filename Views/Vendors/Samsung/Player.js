@@ -173,13 +173,13 @@ function SetPosition(Pos){
 
 function GetWindowFullSize(){
     WindowMaxWidth   = window.screen.width;
-    WindowMaxHeight  = window.screen.width;
+    WindowMaxHeight  = window.screen.height;
 }
 
 function GetWindowMinSize(){
     //Debug('TvPercentageSize: '+TvPercentageSize);
     WindowMinWidth   = ((window.screen.width)*33)/100;
-    WindowMinHeight  = ((window.screen.width)*33)/100;
+    WindowMinHeight  = ((window.screen.height)*33)/100;
     //Debug('WindowMinHeight: '+WindowMinHeight);
 }
 
