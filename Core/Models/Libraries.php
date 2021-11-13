@@ -6,9 +6,6 @@ $GetJson    = !empty($_POST['GetJson']) ? $_POST['GetJson'] : false;
 $Libraries  = array();
 $JsonLibraries = array();
 
-
-
-
 if($GetJson == true){
     require_once 'Database.php';
     require_once '../DataAccess/Config.php';
