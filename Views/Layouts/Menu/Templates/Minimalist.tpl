@@ -1,6 +1,7 @@
 <html>
 
 <body>
+    <img id='MainLogo' src='[@MainLogo]'>
     <img id='back' src="Media/background.jpg">
 
     <div id='MenuWeather'>
@@ -11,7 +12,7 @@
         </div>
     </div>
     
-    <img id='MainLogo' src='[@MainLogo]'>
+    
     <div id='MenuDate'></div>
     <div id='MenuHour'></div>
 
