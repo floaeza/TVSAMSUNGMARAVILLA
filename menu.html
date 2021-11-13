@@ -175,9 +175,10 @@
 
   //var FooterInterval = setInterval(function(){ SetFooterScripts(); }, 500);
 
-  setTimeout(SetFooterScripts(), 100);
-
-  setTimeout(SetMenuElements(), 400);
+  setTimeout(SetFooterScripts(), 200);
+  $(document).ready(function(){
+      SetMenuElements();
+  });
 
   function SetMenuElements(){
     // Contenido multimedia para Menu

@@ -3412,6 +3412,11 @@ YdNuQ5SBMQ==</DigestValue>
 <DigestValue>x+VmUtCpep63YmtjSjv84s81YHsS+vszpatPCk24YleHQlmQnH1TsoMQMVRp3hadTlwji/+2ryu+
 EwTwXS2nvg==</DigestValue>
 </Reference>
+<Reference URI="bbinco_1_3.wgt">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
+<DigestValue>8/sLseVgN5eLLOrvvLEgX1HE5PyZK3HiYV5cJ9D9OP1e4NTKV46ACJaorCBfeB2dy4eg+J2uMZEy
+AmHsVevnzQ==</DigestValue>
+</Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
 <DigestValue>OLyk0Ovbqc22EXR+y6CFZpltW/gztocm6FhkLUANViaFFGnKkwjt4p0z1WGW3hEpQZU/6f1+o2yt
@@ -3454,8 +3459,8 @@ Evus1IeW9g==</DigestValue>
 </Reference>
 <Reference URI="menu.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>AqU9eT6TOA15KLJ65PgnpTYJvJT3To6OORkRedA7UEyPjmMiCfz+EjC4qm01nPqLgvLTh5Gb8VmZ
-aRUWlCnAQg==</DigestValue>
+<DigestValue>5AtWpn4Az/FGwYD7JuC0ycni2EI4eiU5P7Ik1YI/CmpgEWtfIf/k0cwyIUZTS3R3zJP9oo4Rd9Wd
+b2mRjMzkAA==</DigestValue>
 </Reference>
 <Reference URI="menu.php">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -3497,9 +3502,9 @@ QY10fG1EWQ==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-X0UQeOupyk2kYkw9YUHVZ711w/VQZs0PbFx4wEr+iLji41rCbySod7PxtbKbiG8vODaEtfyuNJmp
-eb+KNM5yo6J+Kyya5kVhj1fBexbSQK8zrEmmQ70HjoLtCwezth4yv6gsXb3pwOnaZVVWeRzWGDT+
-pxXrwQemEbqGYLq7CPE=
+Qy3L2v9m70rXYG7X/vWJSA95pkSvuYS6lG/ypuJGmtm18aZW0IkXNnHa71cKfBFGqyvoOSK6hKWr
+JsZGUEczd6F+sI9UNdmUcSMNaP17VUyI22CshA5SD6vCnRQhQX9jg7JXYhj8fb5T02zOsyDEqz+s
+TNy4l8JSVH7fn9/fagg=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
