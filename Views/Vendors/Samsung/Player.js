@@ -23,11 +23,11 @@ var Checker = null;
 
     Player.setListener(listener);
 
-    Debug('PLAYER WEBAPIS.AVPLAY >>s LISTENER');
+    //Debug('PLAYER WEBAPIS.AVPLAY >>s LISTENER');
 
 GetWindowFullSize();
-
-setTimeout(function(){ GetWindowMinSize(); }, 2000);
+GetWindowMinSize();
+//setTimeout(function(){ GetWindowMinSize(); }, 2000);
 
 /* *****************************************************************************
  * Reproductor de canal
@@ -172,15 +172,15 @@ function SetPosition(Pos){
  * ****************************************************************************/
 
 function GetWindowFullSize(){
-    WindowMaxWidth   = 1920;
-    WindowMaxHeight  = 1080;
+    WindowMaxWidth   = window.screen.width;
+    WindowMaxHeight  = window.screen.width;
 }
 
 function GetWindowMinSize(){
-    Debug('TvPercentageSize: '+TvPercentageSize);
-    WindowMinWidth   = ((1920)*TvPercentageSize)/100;
-    WindowMinHeight  = ((1080)*TvPercentageSize)/100;
-    Debug('WindowMinHeight: '+WindowMinHeight);
+    //Debug('TvPercentageSize: '+TvPercentageSize);
+    WindowMinWidth   = ((window.screen.width)*33)/100;
+    WindowMinHeight  = ((window.screen.width)*33)/100;
+    //Debug('WindowMinHeight: '+WindowMinHeight);
 }
 
 /* *****************************************************************************
@@ -188,17 +188,17 @@ function GetWindowMinSize(){
  * ****************************************************************************/
 
 function MaximizeTV(){
-    if(CurrentModule === 'Tv'){
-        if(ActiveEpgContainer === true){
-            // do nothing
-        } else if(RecordingPanel === true){
-            // do nothing
-        } else  {
-            Player.setDisplayRect(0, 0, WindowMaxWidth, WindowMaxHeight);
-        }
-    } else {
+    // if(CurrentModule === 'Tv'){
+    //     if(ActiveEpgContainer === true){
+    //         // do nothing
+    //     } else if(RecordingPanel === true){
+    //         // do nothing
+    //     } else  {
+    //         Player.setDisplayRect(0, 0, WindowMaxWidth, WindowMaxHeight);
+    //     }
+    // } else {
         Player.setDisplayRect(0, 0, WindowMaxWidth, WindowMaxHeight);
-    }
+    //}
 }
 
 
