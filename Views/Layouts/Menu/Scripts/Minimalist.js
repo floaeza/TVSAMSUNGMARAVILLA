@@ -16,11 +16,10 @@ MenuList        = '',
 
 MenuIndex       = 0,
 IndexM = null,
-xhr = null;
 
 function SetMenuList(){
     MenuList = null;
-    xhr = $.ajax({
+    $.ajax({
         type: 'POST',
         cache: false,
         async: false,
@@ -37,25 +36,9 @@ function SetMenuList(){
             
         }
     });
-    xhr = null;
-    // if(typeof(ASTB) !== 'undefined'){
-    //     setFrames();  
-    // }
-   
     SetMenuInfo();
 }
 
-function setFrames(){
-    //alert(parent.document.getElementsByTagName('<iframe>')[0]);
-    for(var i = 0; i < MenuList.length; i++){
-        //parent.document.getElementById(MenuList[i].Name).src='tv.php'+'?MacAddress='+'00:00:00:00:00:00'+'&ModuleId='+1+'&CurrentModule=Tv';
-        if(typeof(ASTB) !== 'undefined')
-            parent.document.getElementById(MenuList[i].Name).src=MenuList[i].Url+'?MacAddress='+ASTB.GetMacAddress()+'&ModuleId='+MenuList[i].Id+'&CurrentModule='+MenuList[i].Name;
-        else
-            parent.document.getElementById(MenuList[i].Name).src=MenuList[i].Url+'?MacAddress='+'00:00:00:00:00:00'+'&ModuleId='+MenuList[i].Id+'&CurrentModule='+MenuList[i].Name;
-    }
-    
-}
 GetWeather();
 SetMenuList();
 //SetMenuInfo()
