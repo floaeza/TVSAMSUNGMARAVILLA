@@ -82,7 +82,7 @@
 
         <div id='BarCircle'>
             <div id='PercentageCircle' class='c100 center p0'>
-                <span id='PercentageText'>34%</span>
+                <!--<span id='PercentageText'>34%</span>-->
                 <div class='slice'>
                     <div class='bar'></div>
                     <div class='fill'></div>
