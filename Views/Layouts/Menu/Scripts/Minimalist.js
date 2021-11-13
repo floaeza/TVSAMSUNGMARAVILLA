@@ -16,13 +16,14 @@ MenuList        = '',
 
 MenuIndex       = 0,
 IndexM = null,
+xhr = null;
 
 function SetMenuList(){
     MenuList = null;
     $.ajax({
         type: 'POST',
         cache: false,
-        async: false,
+        //async: false,
         url: ServerSource + 'Core/Controllers/Menu.php',
         data: { 
             Option : 'GetModules',
@@ -36,9 +37,9 @@ function SetMenuList(){
             
         }
     });
+   
     SetMenuInfo();
 }
-
 GetWeather();
 SetMenuList();
 //SetMenuInfo()
