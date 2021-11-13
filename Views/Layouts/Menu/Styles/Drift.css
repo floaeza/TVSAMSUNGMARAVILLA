@@ -1,0 +1,191 @@
+
+body{
+    background: #fff;
+}
+ul.horizontal{
+    margin:0;
+    padding:0;
+}
+ul.horizontal li{
+    display:block;
+    float:left;
+    padding:0 10px;
+}
+div#MenuContainer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    color: rgb(0, 0, 0);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 36px;
+    z-index: 2;
+}
+.MenuNodes {
+    width: 100%;
+    font-size: 35px;
+    padding: 1%;
+    float: unset;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.795);
+}
+.MenuNodes.focus{
+    border-bottom: 7px solid rgb(0, 0, 0);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 4px 6px -6px rgba(255, 255, 255, 0.795);;
+
+}
+.MenuList{
+    margin-top: 25%;
+    text-align: justify;
+    margin-left: 7%;
+    position: absolute;
+}
+
+div#MenuWeather,
+div#MenuHour,
+div#MenuDateHeader, .MenuNodes{
+    font-family: Bohemian-typewriter;
+}
+#WeatherIcon {
+    float: left;
+}
+
+div#MenuWeather {
+    width: 25%;
+    font-size: 85%;
+    top: 18%;
+    position: fixed;
+    right: 0%;
+    text-shadow: 4px 4px 10px rgba(233, 232, 232, 0.5);
+    padding: 1%;
+    margin-right: 10%;
+    margin-top: 0%;
+}
+div#MenuDateHeader {
+    width: 14%;
+    font-size: 85%;
+    top: 18%;
+    position: fixed;
+    right: 0%;
+    text-shadow: 4px 4px 10px rgba(233, 232, 232, 0.5);
+    padding: 1%;
+    margin-top: 0%;
+    margin-right: 2%;
+}
+div#MenuTitle {
+    width: 25%;
+    font-size: 150%;
+    position: fixed;
+    right: 0%;
+    text-shadow: 4px 4px 10px rgba(233, 232, 232, 0.5);
+    padding: 1%;
+    margin-right: 5%;
+    top: 10%;
+    font-family: Dominator-Medium;
+    display: none;
+}
+#MenuBackgrounds {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    /* background: linear-gradient(
+        rgb(255 255 255 / 65%), 
+        rgb(55 53 53 / 30%)
+      ),
+   url(../../../../../Media/Menu/DRIFT/DRIFT.jpg); */
+   background-image:url(../../../../../Media/Menu/DRIFT/DRIFT.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} 
+#MenuBackgroundsRGB {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    /* background: linear-gradient(
+        rgb(255 255 255 / 65%), 
+        rgb(55 53 53 / 30%)
+      ),
+   url(../../../../../Media/Menu/DRIFT/DRIFT.jpg); */
+   background-image: linear-gradient(rgb(248, 248, 248), rgb(255, 255, 255));
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 1;
+    opacity: 0.1;
+} 
+
+
+div#WeatherSummary {
+    float: right;
+    width: 40%;
+    text-align: left;
+    white-space: nowrap;
+    display: none;
+}
+
+div#TemperatureGroup {
+    float: left;
+    width: 75%;
+}
+
+div#MenuHour {
+    width: 100%;
+    font-size: 30px;
+    text-shadow: 4px 4px 10px rgba(233, 232, 232, 0.5);
+}
+
+div#BackgroundContainer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    color: rgb(0, 0, 0);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 36px;
+} 
+@font-face {
+    font-family: 'Curantyle-Bold-Bold';
+    src:url('Custom-Fonts/Curantyle-Bold-Bold/Curantyle-Bold-Bold.ttf.woff') format('woff'),
+        url('Custom-Fonts/Curantyle-Bold-Bold/Curantyle-Bold-Bold.ttf.svg#Curantyle-Bold-Bold') format('svg'),
+        url('Custom-Fonts/Curantyle-Bold-Bold/Curantyle-Bold-Bold.ttf.eot'),
+        url('Custom-Fonts/Curantyle-Bold-Bold/Curantyle-Bold-Bold.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Dominator-Medium';
+    src:url('Custom-Fonts/Dominator-Medium/Dominator-Medium.ttf.woff') format('woff'),
+        url('Custom-Fonts/Dominator-Medium/Dominator-Medium.ttf.svg#Dominator-Medium') format('svg'),
+        url('Custom-Fonts/Dominator-Medium/Dominator-Medium.ttf.eot'),
+        url('Custom-Fonts/Dominator-Medium/Dominator-Medium.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Street-Bold-Compressed';
+    src:url('Custom-Fonts/Street-Bold-Compressed/Street-Bold-Compressed.ttf.woff') format('woff'),
+        url('Custom-Fonts/Street-Bold-Compressed/Street-Bold-Compressed.ttf.svg#Street-Bold-Compressed') format('svg'),
+        url('Custom-Fonts/Street-Bold-Compressed/Street-Bold-Compressed.ttf.eot'),
+        url('Custom-Fonts/Street-Bold-Compressed/Street-Bold-Compressed.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bohemian-typewriter';
+    src:url('Custom-Fonts/Bohemian-typewriter/Bohemian-typewriter.ttf.woff') format('woff'),
+        url('Custom-Fonts/Bohemian-typewriter/Bohemian-typewriter.ttf.svg#Bohemian-typewriter') format('svg'),
+        url('Custom-Fonts/Bohemian-typewriter/Bohemian-typewriter.ttf.eot'),
+        url('Custom-Fonts/Bohemian-typewriter/Bohemian-typewriter.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,122 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 9, 2020, 7:41:07 PM
+    Author     : tania
+*/
+
+@font-face {
+    font-family: 'Bohemian-typewriter';
+    src:url('../../Menu/Styles/Custom-Fonts/Bohemian-typewriter/Bohemian-typewriter.ttf.woff') format('woff'),
+        url('../../Menu/Styles/Custom-Fonts/Bohemian-typewriter/Bohemian-typewriter.ttf.svg#Bohemian-typewriter') format('svg'),
+        url('../../Menu/Styles/Custom-Fonts/Bohemian-typewriter/Bohemian-typewriter.ttf.eot'),
+        url('../../Menu/Styles/Custom-Fonts/Bohemian-typewriter/Bohemian-typewriter.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#image1 {
+    height: 100%;
+    width: 100%;
+}
+#video1 {
+    position: fixed; 
+    bottom: 0; 
+    right: 0;
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top:50%;
+    left: 50%; 
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    margin-top: -100px;
+    margin-left: -100px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+div#MenuWeather {
+    width: 30%;
+    font-size: 85%;
+    top: 23%;
+    position: fixed;
+    right: 60%;
+    text-shadow: 4px 4px 10px rgba(15, 15, 15, 0.623);
+    padding: 1%;
+    margin-right: 10%;
+    margin-top: 0%;
+}
+div#MenuDateHeader {
+    width: 14%;
+    font-size: 85%;
+    top: 23%;
+    position: fixed;
+    right: 65%;
+    text-shadow: 4px 4px 10px rgba(20, 19, 19, 0.637);
+    padding: 1%;
+    margin-top: 0%;
+    margin-right: 2%;
+}
+
+div#TemperatureGroup {
+    float: left;
+    width: 75%;
+}
+
+div#MenuHour {
+    width: 100%;
+    font-size: 30px;
+    text-shadow: 4px 4px 10px rgba(10, 9, 9, 0.589);
+}
+
+div#MenuWeather,
+div#MenuHour,
+div#MenuDateHeader, .MenuNodes{
+    font-family: Bohemian-typewriter;
+}
+
+
+div#WeatherSummary {
+    float: right;
+    width: 40%;
+    text-align: left;
+    white-space: nowrap;
+    display: none;
+}
+div#MenuContainer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    color: rgb(255, 255, 255);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 36px;
+    z-index: 2;
+}
+
+div#MenuTitle {
+    width: 25%;
+    font-size: 150%;
+    position: fixed;
+    right: 60%;
+    text-shadow: 4px 4px 10px rgba(233, 232, 232, 0.5);
+    padding: 1%;
+    margin-right: 5%;
+    top: 10%;
+    font-family: Dominator-Medium;
+    display: none;
+}

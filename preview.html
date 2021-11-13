@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Views/Libraries/jquery-1.12.3.min.js"></script>
+    <script src="Views/Vendors/Generic/Keys.js"></script>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        #Bbinco {
+            height: 12%;
+        }
+
+        #BbincoTV {
+            border: 8px solid #797777;
+            box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.88);
+            float: left;
+        }
+
+        #Container {
+            width: 100%;
+            position: fixed;
+            height: 90%;
+            overflow: scroll;
+            white-space: nowrap;
+        }
+
+        #Bbinco img {
+            width: 20%;
+        }
+
+        #Control {
+            float: right;
+            padding: 0.5%;
+            width: 30%;
+        }
+
+        #Control img {
+            max-height: 720px;
+            max-width: 400px;
+        }
+
+        /*#Info  {*/
+        /*    position: fixed;*/
+        /*    left: 25%;*/
+        /*    width: 500px;*/
+        /*    border-radius: 18px;*/
+        /*    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);*/
+        /*    opacity: 0.9;*/
+        /*    top: 25%;*/
+        /*    display: none;*/
+        /*}*/
+
+        .RemoteContainer{
+            width:200px;
+            height: 600px;
+            position: absolute;
+            top: 48%;
+            margin-top: -300px;
+            right: 1%;
+            background: no-repeat center center;
+            background-size: contain;
+            font-size: 1em;
+            border-radius: 15px;
+            background-image: linear-gradient(to top, #000, #444);
+
+        }
+
+        .RemoteContainer > table{
+            margin: 0 auto;
+            width: 70%;
+            height: 80%
+        }
+
+        .NumericButton{
+            width: 40px;
+            height: 40px;
+            float:left;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .Button{
+            width: 40px;
+            height: 35px;
+            float:left;
+            text-align: center;
+            /*border-radius: 15px;*/
+            /*background-image: linear-gradient(to bottom right, #000000, #cccccc);*/
+            color: white;
+            line-height: 2.3em;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+        }
+        .ClickedButton{
+            border-radius: 5px;
+            background-image: linear-gradient(to bottom right, #0b0b0b, #1a2a5c);
+
+        }
+        .Top{
+            line-height: 2.5em;
+            font-size: 0.9em;
+        }
+
+        .Middle{
+            line-height: 2.3em;
+        }
+
+
+        #Up{
+            margin: 5px;
+            width: 0;
+            height: 0;
+            border-right: 16px solid transparent;
+            border-left: 16px solid transparent;
+            border-bottom: 20px solid whitesmoke;
+            opacity: 0.5;
+        }
+
+        #Down{
+            margin: 5px;
+            margin-top: 10px;
+            width: 0;
+            height: 0;
+            border-right: 16px solid transparent;
+            border-left: 16px solid transparent;
+            border-top: 20px solid whitesmoke;
+            opacity: 0.5;
+        }
+
+        #Left{
+            margin-left: 7px;
+            margin-top: 2px;
+            width: 0;
+            height: 0;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            border-right: 20px solid whitesmoke;
+            opacity: 0.5;
+        }
+
+        #Right{
+            margin-left: 14px;
+            margin-top: 2px;
+            width: 0;
+            height: 0;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            border-left: 20px solid whitesmoke;
+            opacity: 0.5;
+        }
+
+        #ChannelUp{
+            font-weight: bold;
+            font-size: 2.5em;
+            line-height: 0.95em;
+        }
+
+        #ChannelDown{
+            font-weight: bold;
+            font-size: 2.5em;
+            line-height: 0.75em;
+        }
+
+        #Channel{
+            line-height: 2.3em;
+            background-image: unset ;
+        }
+
+        #Guide{
+            font-size: 0.9em;
+            line-height: 2.6em;
+        }
+
+        #Frame {
+            position: absolute;
+            top: 50%;
+            margin-top: -360px;
+            border: solid rgba(255, 255, 255, 0.3) 5px;
+            pointer-events: none;
+            margin-left: 1%;
+        }
+    </style>
+</head>
+<body>
+<div id='Bbinco'>
+    <img src='Media/Logos/BBN/main_logo.png'>
+</div>
+<div id='Container'>
+    <iframe width="1180" height="580"  title="BbincoTV" id="BbincoTV"></iframe>
+
+    <div class='RemoteContainer' id='RemoteContainer'>
+        <table>
+            <tr class='TopSpacer'>
+                <!--Spacer-->
+            </tr>
+            <tr>
+                <td><div class = 'Button Top' id='Back'>Close</div></td>
+                <td><div class = 'Button Top' id='Menu'>Menu</div></td>
+                <td><div class = 'Button Top' id='Info'>Info</div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><div class = 'Button Up'><div id='Up'></div></div></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><div class = 'Button Middle'><div id='Left'></div></div></td>
+                <td><div class = 'Button Middle'><div id='Ok'>OK</td>
+                <td><div class = 'Button Middle'><div id='Right'></div></div></td>
+            </tr>
+            <tr>
+                <td><i></i></td>
+                <td><div class = 'Button Down'><div id='Down'></div></div></td>
+                <td><i></i></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><div class = 'Button Bottom' id='Guide'>Guide</div></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><div class = 'Button' id='ChannelUp'>+</div></td>
+                <td><div class = 'Button' id='Channel'>CH</div></td>
+                <td><div class = 'Button' id='ChannelDown'>-</div></td>
+            </tr>
+            <tr class='ChannelButtonsLimit'>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+            <tr class='Spacer'>
+                <!--Spacer-->
+            </tr>
+            <td><div class = 'NumericButton Button' id='1'>1</div></td>
+            <td><div class = 'NumericButton Button' id='2'>2</div></td>
+            <td><div class = 'NumericButton Button' id='3'>3</div></td>
+            </tr>
+            <tr>
+                <td><div class = 'NumericButton Button' id='4'>4</div></td>
+                <td><div class = 'NumericButton Button' id='5'>5</div></td>
+                <td><div class = 'NumericButton Button' id='6'>6</div></td>
+            </tr>
+            <tr>
+                <td><div class = 'NumericButton Button' id='7'>7</div></td>
+                <td><div class = 'NumericButton Button' id='8'>8</div></td>
+                <td><div class = 'NumericButton Button' id='9'>9</div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><div class = 'NumericButton Button' id='0'>0</div></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <!--div id='Control'>
+        <img src='Media/Logos/BBN/control.png'>
+    </div-->
+</div>
+
+<!--img id='Help' src='Media/Logos/BBN/help.png' onclick="ShowInfo()">
+
+<img id='Info' src='Media/Logos/BBN/info.png' onclick="CloseInfo()"-->
+</body>
+<script>
+    // var Help = document.getElementById('Help');
+    // var Info = document.getElementById('Info');
+    //
+    // function ShowInfo() {
+    //     Info.style.display = 'inline';
+    // }
+    //
+    // function CloseInfo() {
+    //     Info.style.display = 'none';
+    // }
+
+    /********************************************
+     * Inicialización de variables
+     *********************************************/
+    var
+        Frame               = document.getElementById('BbincoTV'),
+        Menu                = document.getElementById('Menu'),
+        Info                = document.getElementById('Info'),
+        Left                = document.getElementById('Left').parentElement,
+        Right               = document.getElementById('Right').parentElement,
+        Up                  = document.getElementById('Up').parentElement,
+        Down                = document.getElementById('Down').parentElement,
+        Ok                  = document.getElementById('Ok'),
+        Back                = document.getElementById('Back'),
+        Guide               = document.getElementById('Guide'),
+        ChannelUp           = document.getElementById('ChannelUp'),
+        ChannelDown         = document.getElementById('ChannelDown'),
+        Number1             = document.getElementById('1'),
+        Number2             = document.getElementById('2'),
+        Number3             = document.getElementById('3'),
+        Number4             = document.getElementById('4'),
+        Number5             = document.getElementById('5'),
+        Number6             = document.getElementById('6'),
+        Number7             = document.getElementById('7'),
+        Number8             = document.getElementById('8'),
+        Number9             = document.getElementById('9'),
+        Number0             = document.getElementById('0'),
+        RemoteContainer     = document.getElementById('RemoteContainer');
+
+    var Host = self.location.host;
+
+    Frame.src = 'http://'+Host+'/BBINCO/TV/index.php';
+
+    /*********************************************
+     * Creadores de eventos para control remoto
+     *********************************************/
+    Menu.addEventListener('click',        function(){ Frame.contentWindow.MakeEvent(REMOTE_MENU); });
+    Info.addEventListener('click',        function(){ Frame.contentWindow.MakeEvent(REMOTE_INFO); });
+    Left.addEventListener('click',        function(){ Frame.contentWindow.MakeEvent(ARROW_KEY_LEFT); });
+    Right.addEventListener('click',       function(){ Frame.contentWindow.MakeEvent(ARROW_KEY_RIGHT); });
+    Up.addEventListener('click',          function(){ Frame.contentWindow.MakeEvent(ARROW_KEY_UP); });
+    Down.addEventListener('click',        function(){ Frame.contentWindow.MakeEvent(ARROW_KEY_DOWN); });
+    Ok.addEventListener('click',          function(){ Frame.contentWindow.MakeEvent(REMOTE_OK); });
+    Back.addEventListener('click',        function(){ Frame.contentWindow.MakeEvent(REMOTE_BACK); });
+    Guide.addEventListener('click',       function(){ Frame.contentWindow.MakeEvent(REMOTE_GUIDE); });
+    ChannelUp.addEventListener('click',   function(){ Frame.contentWindow.MakeEvent(REMOTE_CHANNEL_UP); });
+    ChannelDown.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(REMOTE_CHANNEL_DOWN); });
+
+    Number0.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(48); });
+    Number1.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(49); });
+    Number2.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(50); });
+    Number3.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(51); });
+    Number4.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(52); });
+    Number5.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(53); });
+    Number6.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(54); });
+    Number7.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(55); });
+    Number8.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(56); });
+    Number9.addEventListener('click', function(){ Frame.contentWindow.MakeEvent(57); });
+
+    Menu.addEventListener('mousedown',          function(){ Menu.classList.toggle('ClickedButton'); setTimeout(function(){ Menu.classList.toggle('ClickedButton'); },100) });
+    Info.addEventListener('mousedown',          function(){ Info.classList.toggle('ClickedButton'); setTimeout(function(){ Info.classList.toggle('ClickedButton'); },100) });
+    Left.addEventListener('mousedown',          function(){ Left.classList.toggle('ClickedButton'); setTimeout(function(){ Left.classList.toggle('ClickedButton'); },100) });
+    Right.addEventListener('mousedown',         function(){ Right.classList.toggle('ClickedButton'); setTimeout(function(){ Right.classList.toggle('ClickedButton'); },100) });
+    Up.addEventListener('mousedown',            function(){ Up.classList.toggle('ClickedButton'); setTimeout(function(){ Up.classList.toggle('ClickedButton'); },100) });
+    Down.addEventListener('mousedown',          function(){ Down.classList.toggle('ClickedButton'); setTimeout(function(){ Down.classList.toggle('ClickedButton'); },100) });
+    Ok.addEventListener('mousedown',            function(){ Ok.classList.toggle('ClickedButton'); setTimeout(function(){ Ok.classList.toggle('ClickedButton'); },100) });
+    Back.addEventListener('mousedown',          function(){ Back.classList.toggle('ClickedButton'); setTimeout(function(){ Back.classList.toggle('ClickedButton'); },100) });
+    Guide.addEventListener('mousedown',         function(){ Guide.classList.toggle('ClickedButton'); setTimeout(function(){ Guide.classList.toggle('ClickedButton'); },100) });
+    ChannelUp.addEventListener('mousedown',     function(){ ChannelUp.classList.toggle('ClickedButton'); setTimeout(function(){ ChannelUp.classList.toggle('ClickedButton'); },100) });
+    ChannelDown.addEventListener('mousedown',   function(){ ChannelDown.classList.toggle('ClickedButton'); setTimeout(function(){ ChannelDown.classList.toggle('ClickedButton'); },100) });
+    Number0.addEventListener('mousedown',       function(){ Number0.classList.toggle('ClickedButton'); setTimeout(function(){ Number0.classList.toggle('ClickedButton'); },100) });
+    Number1.addEventListener('mousedown',       function(){ Number1.classList.toggle('ClickedButton'); setTimeout(function(){ Number1.classList.toggle('ClickedButton'); },100) });
+    Number2.addEventListener('mousedown',       function(){ Number2.classList.toggle('ClickedButton'); setTimeout(function(){ Number2.classList.toggle('ClickedButton'); },100) });
+    Number3.addEventListener('mousedown',       function(){ Number3.classList.toggle('ClickedButton'); setTimeout(function(){ Number3.classList.toggle('ClickedButton'); },100) });
+    Number4.addEventListener('mousedown',       function(){ Number4.classList.toggle('ClickedButton'); setTimeout(function(){ Number4.classList.toggle('ClickedButton'); },100) });
+    Number5.addEventListener('mousedown',       function(){ Number5.classList.toggle('ClickedButton'); setTimeout(function(){ Number5.classList.toggle('ClickedButton'); },100) });
+    Number6.addEventListener('mousedown',       function(){ Number6.classList.toggle('ClickedButton'); setTimeout(function(){ Number6.classList.toggle('ClickedButton'); },100) });
+    Number7.addEventListener('mousedown',       function(){ Number7.classList.toggle('ClickedButton'); setTimeout(function(){ Number7.classList.toggle('ClickedButton'); },100) });
+    Number8.addEventListener('mousedown',       function(){ Number8.classList.toggle('ClickedButton'); setTimeout(function(){ Number8.classList.toggle('ClickedButton'); },100) });
+    Number9.addEventListener('mousedown',       function(){ Number9.classList.toggle('ClickedButton'); setTimeout(function(){ Number8.classList.toggle('ClickedButton'); },100) });
+</script>
+</html>

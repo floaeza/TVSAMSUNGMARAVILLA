@@ -1,0 +1,320 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 7, 2019, 10:30:05 AM
+    Author     : tania
+*/
+
+@font-face {
+    font-family: novecento;
+    src: url(./Fonts/Novecentosanswide-Book-webfont.ttf);
+}
+@font-face {
+    font-family: poppins;
+    src: url(./Fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: gnu;
+    src: url(./Fonts/gnuolane.ttf);
+}
+@font-face {
+    font-family: bebas;
+    src: url(./Fonts/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: billy;
+    src: url(./Fonts/BillyOhio.ttf);
+}
+@font-face {
+    font-family: coolvetica;
+    src: url(./Fonts/coolvetica-rg.ttf);
+}
+@font-face {
+    font-family: gloss;
+    src: url(./Fonts/Gloss_And_Bloom.ttf);
+}
+@font-face {
+    font-family: nomove;
+    src: url(./Fonts/No-move.ttf);
+}
+@font-face {
+    font-family: historia;
+    src: url(./Fonts/TheHistoriaDemo.ttf);
+}
+@font-face {
+    font-family: be;
+    src: url(./Fonts/BeVietnam-Regular.ttf);
+}
+
+@font-face {
+    font-family: hammer;
+    src: url(./Fonts/HammersmithOne.ttf);
+}
+@font-face {
+    font-family: ostrich;
+    src: url(./Fonts/ostrich-regular.ttf);
+}
+@font-face {
+    font-family: darker;
+    src: url(./Fonts/DarkerGrotesque-Regular.ttf);
+}
+@font-face {
+    font-family: free;
+    src: url(./Fonts/FreeSans.ttf);
+}
+@font-face {
+    font-family: raleway;
+    src: url(./Fonts/Raleway-Regular.ttf);
+}
+@font-face {
+    font-family: helvetica;
+    src: url(./Fonts/HelveticaNeue.ttf);
+}
+@font-face {
+    font-family: gotham;
+    src: url(./Fonts/Gotham-Book-A.ttf);
+}
+
+@font-face {
+    font-family: GothamLight;
+    src: url(./Fonts/Gotham-Light.ttf);
+}
+@font-face {
+    font-family: Gothic;
+    src: url(./Fonts/CenturyGothic.ttf);
+}
+@font-face {
+    font-family: calibri-regular;
+    src: url(./Fonts/calibri-regular.ttf);
+}
+@font-face {
+    font-family: arial-rounded;
+    src: url(./Fonts/ARLRDBD.ttf);
+}
+/*
+TITULOS
+<div style='font-family: novecento;'>1 Aviso program Avenger infinity war 14:38 /-($)!?</div>
+<div style='font-family: bebas;'>2 Aviso program Avenger infinity war 14:38 /-($)!?</div>
+GENERAL
+<div style='font-family: poppins;'>3 Aviso program Avenger infinity war 14:38 /-($)!?</div>
+<div style='font-family: gnu;'>4 Aviso program Avenger infinity war 14:38 /-($)!?</div>
+<div style='font-family: coolvetica;'>5 Aviso program Avenger infinity war 14:38 /-($)!?</div>
+TITULOS
+<div style='font-family: nomove;'>6 Aviso program Avenger infinity war 14:38 /-($)!?</div>
+<div style='font-family: regencie;'>7 Aviso program Avenger infinity war 14:38 /-($)!?</div>
+<div style='font-family: gloss;'>8 Aviso program Avenger infinity war 14:38 /-($)!?</div>
+TITULOS SIN SIMBOLOS
+<div style='font-family: billy;'>9 Aviso program Avenger infinity war 14:38 /-($)!?</div>
+TITULO SIN NUMEROS Y SIMBOLOS
+<div style='font-family: historia;'>10 Aviso program Avenger infinity war 14:38 /-($)!?</div>
+*/
+
+body, html {
+    background-color: transparent;
+    background-image:url(tv:);
+    background:url(tv:);
+    -webkit-background-composite: clear;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
+    scrollbar-face-color: RGBA(255, 255, 255, 0.9);
+    scrollbar-highlight-color: RGBA(255, 255, 255, 0.9);
+    scrollbar-shadow-color: RGBA(255, 255, 255, 0.9);
+    scrollbar-3dlight-color: RGBA(255, 255, 255, 0.9);
+    scrollbar-arrow-color: RGBA(255, 255, 255, 0.9);
+    scrollbar-track-color: RGBA(255, 255, 255, 0.9);
+    scrollbar-darkshadow-color: RGBA(255, 255, 255, 0.9);
+}
+
+/* Div contenedor usado en la mayoria de templates*/
+div.GeneralBox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    background-size: 100% 100% !important;
+}
+
+div#DebugText {
+    position: fixed;
+    top: 0;
+    width: 97%;
+    height: 95%;
+    padding: 1.5%;
+    background: rgba(0,0,0,0.7);
+    text-align: left;
+    font-family: be;
+    display: none;
+    z-index: 2;
+}
+
+div#DebugText p {
+    margin: 0;
+    color:#0be1d7;
+}
+/***************************************** INDEX **************************************************/
+
+/* Fondo blanco para index*/
+div.BackgroundSolid {
+    background-color: rgb(255, 255, 255);
+}
+
+/* Tamano logo index */
+#Logo {
+    width: 70%;
+}
+
+/* Texto index */
+#CenterText { 
+    font-size: 12pt;
+    font-family: arial;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+    margin: 0%;
+    bottom: 10%;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+#DebugText {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    bottom: 8%;
+    position: fixed;
+    color: white;
+}
+
+/* Contenedor index */
+
+div.ContainerIndex {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/********************* INFO TV *****************************/
+
+div#InfoContainer {
+    width: 95%;
+    left: 2.5%;
+    bottom: 0;
+    position: fixed;
+    visibility: hidden;
+    font-size: 20px;
+    margin-bottom: 2%;
+    color: #fff;
+    height: 20%;
+    /*border-radius: 6px;*/
+}
+
+div.ChannelNumber {
+    width: 70%;
+    float: left;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 3%;
+}
+
+div.Quality {
+    width: 5%;
+    float: left;
+    text-align: center;
+    padding-bottom: 0.5%;
+}
+
+div.ChannelName {
+    width: 28%;
+    float: left;
+    padding-bottom: 0.5%;
+}
+
+div.Date {
+    float: right;
+    width: 52%;
+    text-align: right;
+    padding-right: 3%;
+}
+
+div.Title {
+    padding-left: 3%;
+    float: left;
+    width: 57%;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.RecInfo {
+    margin: 0;
+    color: #df778a;
+    text-shadow: 3px 3px 4px #000;
+    width: 2%;
+    display: inline;
+}
+
+div.Duration {
+    width: 15%;
+    float: left;
+    text-align: center;
+}
+
+div.Time {
+    width: 22%;
+    text-align: right;
+    float: right;
+    padding-right: 3%;
+}
+
+div.Description {
+    width: 94%;
+    padding: 0.5% 3% 0% 3%;
+    float: right;
+    text-align: justify;
+    font-size: 20px;
+}
+
+/********************* CHANNEL TV *****************************/
+
+div#ChannelNumber {
+    font-size: 35px;
+    padding: 4% 0% 0% 3%;
+    position: fixed;
+    width: 20%;
+    text-align: center;
+    font-weight: bold;
+    color:#ffffff;
+    text-shadow: 0.5px 0.5px 0.5px #6a6a6a;
+}
+
+/********************* DIGITAL CHANNEL *****************************/
+
+#ContentFrame {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: fixed;
+}
+
+#ImageDigitalChannel{
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: none;
+}
+
+div#DigitalChannel {
+    z-index: 0;
+    position: fixed;
+    display: none;
+}

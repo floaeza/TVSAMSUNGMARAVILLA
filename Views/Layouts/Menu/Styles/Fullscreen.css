@@ -1,0 +1,107 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Jan 31, 2020, 3:58:10 PM
+    Author     : tania
+*/
+
+/***************************** [CONTENEDORES] *****************************/
+
+#MainLogo {
+    max-height: 20%;
+    left: 5%;
+    position: fixed;
+    bottom: 5%;
+}
+
+div#MenuContainer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    color: #fff;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 36px;
+}
+
+#MenuBackgrounds {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+div#MenuDate {
+    width: 50%;
+    height: 9%;
+    font-size: 38px;
+    text-align: left;
+    top: 5%;
+    position: fixed;
+    left: 5%;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+div#MenuHour {
+    width: 20%;
+    height: 5%;
+    font-size: 60px;
+    top: 12%;
+    position: fixed;
+    left: 5%;
+    text-align: left;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+div#MenuWeather,
+div#MenuHour,
+div#MenuDate {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+#WeatherIcon {
+    float: left;
+}
+
+div#MenuWeather {
+    width: 15%;
+    font-size: 30px;
+    top: 6%;
+    position: fixed;
+    right: 1%;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+
+div#WeatherSummary {
+    float: right;
+    width: 40%;
+    text-align: left;
+    white-space: nowrap;
+    display: none;
+}
+
+div#TemperatureGroup {
+    float: left;
+    width: 59%;
+}
+
+
+div#MenuGrid {
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    right: 3%;
+    top: 20%;
+    text-align: right;
+}
+
+#MenuGrid img {
+    margin: 2%;
+    background: rgba(0, 0, 0, 0.65);
+}

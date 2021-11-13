@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="description" content="BBINCOTV"/>
+
+	<title>BBINCOTV</title>
+
+	<!-- Script Files -->
+	<script type='text/javascript' src='$B2BAPIS/b2bapis/b2bapis.js'></script>
+	<script type='text/javascript' src='$MANAGER_WIDGET/Common/af/2.0.0/loader.js'></script>
+	<script type='text/javascript' src='$WEBAPIS/webapis/webapis.js'></script>
+	<script type='text/javascript' src='./Views/Vendors/Samsung/Server.js'></script> <!-- ACTUALIZAR IP SERVIDOR! -->
+
+	<script type='text/javascript' src='./Views/Libraries/jquery-1.12.3.min.js'></script>
+	<script type='text/javascript' src='./Views/Vendors/Samsung/Keys.js'></script>
+
+	<link rel='stylesheet' href='./Views/Styles/FontAwesome/css/all.css'>
+	<link rel='stylesheet' href='./Views/Layouts/Initial/Index.css'>
+</head>
+<body onload='init();'>
+<div class='ContainerIndex' style="background-image: url('./Media/init.jpg') ">
+	<br>
+	<h1 id='DebugText'> L  O  A  D  I  N  G . . .</h1>
+</div>
+
+<div id='Register'>
+	<div class='Help'>Ingrese el código de la habitación/residencia:</div>
+	<div id='Location'>#</div>
+
+	<div id='SelectLocation'>
+		<div class='Help' id='Coincidence'></div>
+
+		<i class="fa fa-caret-up Help" id='Up'></i>
+		<div id='SetLocation'></div>
+		<i class="fa fa-caret-down Help" id='Down'></i>
+		<div class='Help' id='Optional'>Presione ARRIBA o ABAJO hasta encontrar el código correcto</div>
+		<br>
+		<div class='Help' id='LastStep'>Presione ENTER si el código es correcto, CLEAR para empezar de nuevo o EXIT para omitir el registro</div>
+	</div>
+</div>
+
+<div id='HelpControl'>
+	<img src='./Media/control-help.png'>
+</div>
+
+</body>
+<script>
+	/* Carga inicial */
+	var b2bcontrol = '';
+
+	var init = function() {
+		if (window.tizen !== undefined) {
+			b2bcontrol = window.b2bapis.b2bcontrol;
+
+			registerkeys('index');
+		}
+	}
+
+
+
+	var DebugText = document.getElementById('DebugText'),
+		NewRegister = false,
+		FirmwareVersion = '',
+		TvModel = '',
+		MACAddress = '',
+		SetOption = 'CHECK',
+		IPAddress = null,
+		IdLocation = 1;
+
+	var Register = document.getElementById('Register'),
+		HelpControl = document.getElementById('HelpControl');
+
+	var PressedKey = 0,
+		AccountCode = 0,
+		CheckLocations = [],
+		LocationsFound = false,
+		IndexCheck = 0;
+
+	var Location = document.getElementById('Location'),
+		Coincidence = document.getElementById('Coincidence'),
+		LastStep = document.getElementById('LastStep'),
+		SetLocation = document.getElementById('SetLocation'),
+		Optional = document.getElementById('Optional'),
+		Up = document.getElementById('Up'),
+		Down = document.getElementById('Down');
+
+	document.addEventListener('keydown',KeyHandler,false);
+	
+
+	function KeyHandler(e) {
+		PressedKey = e.keyCode;
+		e.preventDefault();
+
+		//console.log('PressedKey: '+PressedKey);
+
+		switch (PressedKey) {
+
+			case REMOTE_OK:
+				if(LocationsFound === false) {
+					if (AccountCode > 0) {
+						var obj = FindLocation();
+					}
+				} else {
+					IdLocation = CheckLocations[IndexCheck]['id_locacion'];
+
+					RegisterDeviceLocation();
+				}
+			break;
+
+			case REMOTE_BACK:
+				ClearLocation();
+				break;
+
+			case  REMOTE_CLOSE:
+				IdLocation = '';
+				RegisterDeviceLocation();
+				break;
+
+			case ARROW_KEY_UP:
+				SetNextLocation('UP');
+				break;
+
+			case ARROW_KEY_DOWN:
+				SetNextLocation('DOWN');
+				break;
+
+			case 48: // 0
+			case 49: // 1
+			case 50: // 2
+			case 51: // 3
+			case 52: // 4
+			case 53: // 5
+			case 54: // 6
+			case 55: // 7
+			case 56: // 8
+			case 57: // 9
+				WriteLocation(PressedKey - 48);
+			break;
+		}
+	}
+
+	function WriteLocation(Key){
+		if(AccountCode === 0){
+			AccountCode = Key;
+		} else {
+			/* Multiplica por 10 el digito que se haya ingresado previamente mas el nuevo que se ingreso */
+			AccountCode *= 10;
+			AccountCode = AccountCode + Key;
+		}
+		Location.textContent = AccountCode;
+	}
+
+	function ClearLocation(){
+		AccountCode = 0;
+		Location.textContent = '#';
+		CheckLocations = [];
+		IndexCheck = 0;
+		LocationsFound = false;
+
+		Coincidence.textContent = '';
+		SetLocation.textContent = '';
+		Optional.style.visibility = 'hidden';
+		Up.style.visibility = 'hidden';
+		Down.style.visibility = 'hidden';
+		LastStep.style.visibility = 'hidden';
+	}
+
+	function FindLocation(){
+		var i = 0,
+			Check = '';
+
+		for(i = 0; i < Locations.length; i++) {
+
+			Check = Locations[i]['codigo_locacion'].includes(AccountCode.toString());
+			if (Check === true){
+				LocationsFound = true;
+				CheckLocations.push(Locations[i]);
+			}
+		}
+
+		SelectLocation();
+
+		return null;
+	}
+
+	function SelectLocation(){
+		if(CheckLocations.length > 1){
+			Optional.style.visibility = 'visible';
+			Up.style.visibility = 'visible';
+			Down.style.visibility = 'visible';
+
+			SetLocation.textContent  = CheckLocations[IndexCheck]['codigo_locacion'];
+		}
+
+		Coincidence.textContent = 'Total coincidencias: '+CheckLocations.length;
+
+		Coincidence.style.visibility = 'visible';
+		LastStep.style.visibility = 'visible';
+	}
+
+	function SetNextLocation(direction){
+
+		(direction === 'UP') ? IndexCheck++: IndexCheck--;
+
+		/* Validamos si llego al princio/fin del arreglo*/
+		if(IndexCheck < 0){
+			IndexCheck = CheckLocations.length - 1;
+		}
+
+		if(IndexCheck > CheckLocations.length){
+			IndexCheck = 0;
+		}
+
+		SetLocation.textContent  = CheckLocations[IndexCheck]['codigo_locacion'];
+	}
+
+
+	function SetIndexData(){
+
+		try {
+			IPAddress = b2bcontrol.getIPAddress();
+		} catch (e) {
+			//alert('[getIPAddress] call syncFunction exception [' + e.code + '] name: ' + e.name + ' message: ' + e.message);
+		}
+
+		try {
+			MACAddress = b2bcontrol.getMACAddress();
+		} catch (e) {
+			//'[getMACAddress] call syncFunction exception [' + e.code + '] name: ' + e.name + ' message: ' + e.message);
+		}
+
+		try {
+			FirmwareVersion = b2bcontrol.getFirmwareVersion();
+		} catch (e) {
+			//'[getFirmwareVersion] call syncFunction exception [' + e.code + '] name: ' + e.name + ' message: ' + e.message);
+		}
+
+		try {
+			TvModel = webapis.productinfo.getModel();
+		} catch (error) {
+			//' error code = ' + error.code
+		}
+
+		DebugText.innerHTML = 'IP: '+IPAddress + ' MAC: '+MACAddress + ' TV: '+TvModel + ' IPs: '+ServerIp;
+
+		GetInfoDevice();
+	}
+
+	function GetInfoDevice(){
+		//alert('http://'+ServerIp + ServerFolder + '/Core/Controllers/Index.php');
+		$.ajax({
+			type: 'POST',
+			url: 'http://'+ServerIp + ServerFolder + '/Core/Controllers/Index.php',
+			async: false,
+			data: {
+				Option      : SetOption,
+				MacAddress  : MACAddress,
+				IpAddress   : IPAddress,
+				LocationId  : IdLocation,
+				Firmware    : FirmwareVersion,
+				Model       : TvModel,
+				Hdd         : 'N',
+				Vendor      : 'Samsung'
+			},
+			success: function (response) {
+				var Data = $.parseJSON(response);
+
+				if(Data['Option'] === 'REGISTER') {
+					GetLocations();
+				} else if(Data['Option'] === 'RELOAD'){
+
+					if(NewRegister === true){
+						alert('Registrado correctamente');
+					}
+
+					var Page = Data['ModuleUrl'].replace('php','html');
+					//alert(Page);
+					var DeviceInfo = 'loading - '+MACAddress + ' > '+Page;
+					DebugText.innerHTML = DeviceInfo;
+					setTimeout(function(){ window.location.href = Page; }, 2000);
+				} else if(Data['Option'] === 'LICENSE'){
+					var DeviceInfo = ' Mac: '+MACAddress+' Ip: '+IPAddress;
+					DebugText.innerHTML = DeviceInfo;
+				} else if(Data['Option'] === 'LOAD'){
+					SetOption = 'LOAD';
+
+					GetInfoDevice();
+				}
+			}
+		});
+	}
+
+	var Locations = [];
+
+	function GetLocations(){
+		$.ajax({
+			type: 'POST',
+			url: 'http://'+ServerIp + ServerFolder + '/Core/Controllers/Index.php',
+			async: false,
+			data: {
+				Option : 'LOCATIONS'
+			},
+			success: function (response) {
+
+				Locations  = $.parseJSON(response);
+
+				Register.style.visibility = 'visible';
+				HelpControl.style.visibility = 'visible';
+			}
+		});
+	}
+
+	function RegisterDeviceLocation(){
+		SetOption = 'REGISTER';
+
+		NewRegister =  true;
+
+		GetInfoDevice();
+	}
+</script>
+</html>

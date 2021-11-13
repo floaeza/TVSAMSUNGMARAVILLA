@@ -1,0 +1,103 @@
+body, html {
+    background-image:url(tv:);
+    background:url(tv:);
+    -webkit-background-composite: clear;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+div.ContainerIndex {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: fixed;
+}
+
+
+h1{
+    font-size: 45px;
+    font-family: Helvetica;
+    color: #FFFFFF;
+    margin: 0%;
+    bottom: 5%;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+#Register {
+    width: 58%;
+    height: 60%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.76);
+    left: 20%;
+    top: 12%;
+    box-shadow: 4px 4px 1px #00000082;
+    font-family: Helvetica;
+    color: #424247;
+    font-size: 26px;
+    text-align: center;
+    padding: 1%;
+}
+
+#Location {
+    background: white;
+    border-radius: 8px;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 43px;
+    color: #76797a;
+    border: 2px solid #ddd;
+}
+
+.Help {
+    margin: 1%;
+    color: #fff;
+}
+
+#SetLocation {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 43px;
+    color: #64b6c9;
+}
+
+#HelpControl {
+    position: fixed;
+    width: 22%;
+    right: 0;
+    height: 100%;
+}
+
+#HelpControl img {
+    width: 15%;
+    position: fixed;
+    top: 5%;
+}
+
+#SelectLocation {
+    margin-top: 5%;
+}
+
+#Optional,
+#Coincidence {
+    color: #959c9e;
+    font-style: italic;
+    font-size: 28px;
+}
+
+#HelpControl,
+#Register,
+#Coincidence,
+#LastStep,
+#Optional,
+#Up,
+#Down {
+    visibility: hidden;
+}

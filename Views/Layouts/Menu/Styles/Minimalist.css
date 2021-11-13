@@ -1,0 +1,153 @@
+
+@font-face {
+  font-family: tahu;
+  src: url(../../../Styles/Fonts/Tahu!.ttf);
+}
+
+html{
+  width: 100vw;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+}
+img#back {
+  height: 100%;
+  width: 100%;
+}
+h1#ico2 {
+  color: #fff;
+  position: absolute;
+  font-family: 'tahu';
+  margin: 0%;
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  vertical-align: middle;
+  top: 50%;
+  margin-top: -10%;
+  left: 0%;
+  bottom: auto;
+  right: auto;
+  font-size: 100px;
+}
+#MainLogo {
+  max-height: 10%;
+  left: 5%;
+  position: fixed;
+  top: 5%;
+}
+
+div#MenuContainer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  color: #fff;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  font-size: 36px;
+}
+
+div#MenuDate {
+  width: 25%;
+  height: 9%;
+  font-size: 60px;
+  text-align: right;
+  top: 5%;
+  position: fixed;
+  right: 20%;
+  border-right: 1px solid;
+  padding-right: 1%;
+  margin-right: 1%;
+}
+
+div#MenuHour {
+  width: 15%;
+  height: 5%;
+  font-size: 60px;
+  top: 5%;
+  position: fixed;
+  right: 5%;
+  text-align: left;
+}
+
+div#MenuWeather,
+div#MenuHour,
+div#MenuDate {
+  font-family: ostrich;
+  color: #fff;
+
+}
+
+#WeatherIcon {
+  float: left;
+}
+
+div#MenuWeather {
+  width: 25%;
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  top: 15%;
+  position: fixed;
+  right: 2%;
+}
+
+
+div#TemperatureGroup {
+  float: left;
+  width: 59%;
+}
+
+#MenuChevronLeft,
+#MenuChevronRight {
+  color: #fff;
+  bottom: 10%;
+  position: fixed;
+  font-size: 40px;
+}
+
+#MenuChevronLeft {
+  position: absolute;
+  left: 5%;
+}
+
+#MenuChevronRight {
+  position: absolute;
+  right: 5%;
+}
+
+div#MenuBar {
+  color: #fff;
+  width: 70%;
+  /*background: rgba(0, 0, 0, 0.7);*/ 
+  position: absolute;
+  bottom: 11%;
+  height: 7%;
+  left: 50%;
+  margin-left: -35%;
+}
+
+div.MenuList {
+  float: left;
+  width: 27.5%;
+  font-size: 40px;
+  text-align: center;
+  font-family: gotham;
+  padding-top: 1.2%;
+}
+
+div.MenuFocus {
+  /*background: rgba(255,255,2550,0);*/
+  border-top: 3px solid #fff;
+  font-size: 50px;
+  height: 100%;
+  width: 45%;
+  padding-top: 1%;
+}

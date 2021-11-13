@@ -1,0 +1,213 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Jan 19, 2019, 12:08:01 PM
+    Author     : tania
+*/
+
+/********** TIPOGRAFIA y COLORES ***********/
+body, html {
+    font-family: be;
+}
+
+div#PvrProgramDate
+div.HourRow,
+div#Temperatures,
+div#PanelMessage,
+div#TemperatureGroup,
+div#EpgRating,
+div.RecordingOptionsButton,
+div#EpgDays,
+div#PvrWeather,
+div.ChannelName,
+div.Time,
+div.Date,
+div.Rating,
+div#ProgramRow1,
+div#ProgramRow2,
+div#ProgramRow3,
+div#ProgramRow4,
+div#ProgramRow5,
+div#ProgramRow6,
+div#ProgramRow7,
+div#EpgTime{
+    font-family: gotham;
+}
+
+div#EpgNowAiring,
+div#CurrentPvrOption,
+div#PvrProgramTitle,
+div#PvrDate,
+div.ChannelNumber,
+p.ChannelNumber,
+p.ChannelName,
+div#EpgDate,
+div#EpgTitle {
+    font-family: gotham;
+}
+
+div.Description,
+div#PvrProgramDescription,
+div#EpgDescription {
+    font-family: GothamLight;
+}
+
+
+/********** BACKGROUNDS ***********/
+
+div.BackgroundInfo {
+    background-image: url('Blue/info.png');
+    /*background-image: linear-gradient(135deg, #45606b 0, #497789 25%, #27657b 50%, #00536e 75%, #004462 100%);*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    opacity: 0.98;
+}
+
+div#PvrContainer,
+div#EpgContainer {
+    color: #fff;
+    background-image: url('Blue/epg.png');
+}
+
+div#PvrOptions,
+div#PvrDeleteOptions,
+div#RecordPlayOptions,
+div#RecordingManualOptions,
+div#RecordingOptions {
+    background-image: url('Blue/square.png');
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    background-size: 100% 100%;
+}
+
+/********** ASIGNA LOS VALORES EN JS PARA CAMBIAR EL FOCUS, GRABACIONES Y POSICION Y PORCENTAJE PANTALLA MINIMIZADA ***********/
+
+div#MessageClose,
+.PvrProgramFocus,
+div#ProgramFocus {
+    background-color: rgb(32, 92, 114);
+    color: #FBAD17;
+}
+
+div#ProgramFocus {
+    /* background focus*/
+    outline: 1px solid rgb(42, 61, 71); /* Color linea grid programas en la guia */
+}
+
+div#Extras {
+    background: #d36363; /* background grabacion */
+    font-size: 38px; /* Porcentaje tv minimizada */
+    line-height: 160px; /* Posicion izquierda tv */
+    padding: 60px; /* Posicion derecha tv */
+    display: none;
+}
+
+/********** SOMBRAS ***********/
+
+p.ChannelNumber,
+p.ChannelName,
+div.HourRow
+{
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/********** COLORES EN ELEMENTOS ***********/
+
+div#EpgStars,
+div#PvrProgramTitle,
+.PvrChevronLeft,
+.PvrChevronRight,
+.Ttle,
+div#BarStatus,
+div#EpgTitle {
+    color: #FBAD17;
+}
+
+div#PanelMessage {
+    background-color: #128ba6;
+}
+
+div#BarUsedSize {
+    background: #0396a6;
+    color: #2f414a;
+}
+
+.Rtg,
+div#EpgRating,
+div.Rating,
+div#Temperatures,
+div#TemperatureGroup {
+    color: #ffffff;
+}
+
+.Program
+{
+    outline: 1px solid rgb(46, 59, 77);
+}
+
+/********** PVR ***********/
+
+div.PvrOptionsButton,
+#PvrLogoContainer,
+div.RecordingManualOptionsButton,
+div.RecordingOptionsButton {
+    background: rgba(0, 0, 0, 0.29);
+}
+
+
+div.PvrOptionsButton,
+div.RecordingManualOptionsButton,
+div.RecordingOptionsButton,
+div#RecordingManualOptions,
+div#BarPosition,
+div#RecorderMessage,
+div#MessageClose,
+.PvrSun {
+    color: #fff;
+}
+
+
+div.PvrProgram,
+div#ProgramRow1,
+div#ProgramRow2,
+div#ProgramRow3,
+div#ProgramRow4,
+div#ProgramRow5,
+div#ProgramRow6,
+div#ProgramRow7 {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+div#ChannelRow1,
+div#ChannelRow2,
+div#ChannelRow3,
+div#ChannelRow4,
+div#ChannelRow5,
+div#ChannelRow6,
+div#ChannelRow7 {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}
+
+div#BarPosition {
+    background-color: rgb(32, 92, 114);
+}
+
+div.BarPosition {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+div.RecordingOptionFocus {
+    background: rgba(251,173,23, 0.9);
+    color: #000;
+    font-weight: bold;
+}
+
+div.BarUsedSize {
+    background: rgba(255, 255, 255, 0.8);
+}

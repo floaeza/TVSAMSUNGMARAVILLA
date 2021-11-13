@@ -1,0 +1,97 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+
+    Created on : Jan 19, 2019, 12:08:01 PM
+    Author     : tania
+*/
+
+body, html {
+    font-family: gotham;
+}
+
+/********** EPG FONTS ***********/
+
+p.ChannelNumber,
+p.ChannelName,
+div.HourRow 
+{
+    font-family: ostrich;
+    font-weight: bold;
+}
+
+/********** INFO ***********/
+
+div.BackgroundInfo {
+    color: #ffffff;
+    background-image: url('Blue/info.jpg');
+    opacity: 0.8;
+}
+
+/********** CONTENEDORES EPG Y PVR ***********/
+
+div#PvrContainer,
+div#EpgContainer {
+    color: #ffffff;
+    background-image: url('Blue/epg.png');
+}
+
+div#BarContainer{
+    background: -o-linear-gradient(-30deg, rgba(1, 50, 93, 0.8), rgba(0,142,200,0.8));
+    background: linear-gradient(-30deg, rgba(1, 50, 93, 0.8), rgba(0,142,200,0.8));
+}
+
+/********** COLORES EN EPG ***********/
+
+div#EpgNowAiring {
+    color: #4CA7CE;
+}
+
+div#EpgTitle {
+    /*color: #36b7dd;*/
+}
+
+div#EpgDays {
+    color: #4CA7CE;
+}
+
+/* ProgramFocus y Program tiene que ser el mismo color */
+div#ProgramFocus {
+    background: rgba(0, 79, 126, 0.9);
+    color: #36b7dd;
+}
+
+.Program
+{
+    outline: 1px solid rgba(0, 79, 126, 0.9);
+}
+
+p.ChannelNumber,
+p.ChannelName,
+div.HourRow 
+{
+    text-shadow: 4px 3px 2px rgba(0,0,0,0.5);
+    font-size: 30px;
+}
+
+/********** PVR ***********/
+
+div#PvrOptions,
+div#PvrDeleteOptions,
+div#RecordPlayOptions,
+div#RecordingManualOptions,
+div#RecordingOptions {
+    background-image: url('Blue/square.jpg');
+    box-shadow: 6px 6px rgba(0,0,0,0.5);
+    background-size: 100% 100%;
+}
+
+div.PvrOptionsButton,
+div.RecordingManualOptionsButton,
+div.RecordingOptionsButton {
+    background: rgba(223, 223, 223, 0.28);
+    color: #fff;
+}

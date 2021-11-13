@@ -1,0 +1,36 @@
+#TopVideo {
+    position: absolute;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    max-width: 57%;
+    height: 100%;
+    z-index: 4;
+    visibility: visible;
+    right: -13%;
+    bottom: 22%;
+}
+
+#MiddleText {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    font-size: 27px;
+    text-align: center;
+    white-space: break-spaces;
+    margin: 2%;
+    width: 50%;
+    bottom: 29%;
+    position: fixed;
+    left: 24%;
+}
+
+#BottomImage {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    left: 0;
+    position: fixed;
+    z-index: 33;
+    max-width: 58%;
+    top: 20%;
+    left: -13%;
+}
+

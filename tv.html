@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="BBINCOTV"/>
+
+    <title>BBINCOTV</title>
+
+    <!-- SE DEBE ACTUALIZAR CON EL ARCHIVO CONFIG.XML PRINCIPAL-->
+    <?xml version="1.0" encoding="UTF-8"?>
+    <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://172.22.22.10//BBINCO/TV/" version="1.0.0" viewmodes="fullscreen">
+        <tizen:application id="87yCAs7xPK.bbinco" package="87yCAs7xPK" required_version="2.3"/>
+        <content src="index.html"/>
+        <feature name="http://www.samsungdforum.com/feature/Keyboard"/>
+        <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+        <icon src="icon.png"/>
+        <tizen:metadata key="http://samsung.com/tv/metadata/prelaunch.support" value="true"/>
+        <tizen:privilege name="http://developer.samsung.com/privilege/network.public"/>
+        <tizen:privilege name="http://developer.samsung.com/privilege/productinfo"/>
+        <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+        <tizen:privilege name="http://tizen.org/privilege/mediacapture"/>
+        <tizen:privilege name="http://developer.samsung.com/privilege/b2bcontrol"/>
+        <tizen:privilege name="http://developer.samsung.com/privilege/b2bdoc"/>
+        <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+        <tizen:profile name="tv-samsung"/>
+        <tizen:setting screen-orientation="landscape" context-menu="enable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+    </widget>
+
+    <!-- Script Files -->
+    <script type='text/javascript' src='$B2BAPIS/b2bapis/b2bapis.js'></script>
+    <script type='text/javascript' src='$MANAGER_WIDGET/Common/af/2.0.0/loader.js'></script>
+    <script type='text/javascript' src='$WEBAPIS/webapis/webapis.js'></script>
+    <script type='text/javascript' src='$B2BAPIS/b2bapis/b2bavplay.js'></script>
+    <script type='text/javascript' src='./Views/Vendors/Samsung/Server.js'></script> <!-- ACTUALIZAR IP SERVIDOR! -->
+    <script type='text/javascript' src='./Views/Libraries/jquery-1.12.3.min.js'></script>
+</head>
+<body onload='init();'>
+    <div class='GeneralBox' id='GeneralBox'></div>
+</body>
+<footer></footer>
+<script>
+    /* Carga inicial */
+    var b2bcontrol = '',
+        Player = '';
+
+    var MACAddress  = '';
+
+    var idModulo = '';
+
+    var InfoDevice = [];
+    var TemplateSource = '';
+    var Data = '';
+
+    var CurrentModule = '',
+        ModuleId      = '',
+        IndexLogo     = '';
+
+    var head = document.getElementsByTagName('head').item(0),
+        footer = document.getElementsByTagName('footer').item(0),
+        script = '',
+        link = '',
+        i = 0;
+
+    var init = function() {
+        //alert('INIT F');
+        if (window.tizen !== undefined) {
+            b2bcontrol = window.b2bapis.b2bcontrol;
+
+            Player = webapis.avplay;
+
+            try {
+                MACAddress = b2bcontrol.getMACAddress();
+            } catch (e) {
+                MACAddress = 'd0:03:df:20:c8:1e';
+                //'[getMACAddress] call syncFunction exception [' + e.code + '] name: ' + e.name + ' message: ' + e.message);
+            }
+
+            GetModule();
+        }
+    }
+
+
+    function GetModule() {
+        $.ajax({
+            type: 'POST',
+            url: 'http://' + ServerIp + ServerFolder+'/Core/Controllers/Module.php',
+            data: {
+                Option: 'getModuleTV',
+                ModuleUrl: 'tv.php',
+            },
+            success: function (response) {
+                var InfoDevice = $.parseJSON(response);
+
+                ModuleId = InfoDevice['ModuleId'];
+                CurrentModule = InfoDevice['ModuleName'];
+
+                InfoDevice = null;
+
+                GetContents();
+            }
+        });
+    }
+
+    function GetContents() {
+    
+        $.ajax({
+            method: 'POST',
+            url: 'http://' + ServerIp + ServerFolder+'/tvContent.php',
+            async: false,
+            data: {
+                MacAddress: MACAddress,
+                ModuleId: ModuleId,
+                CurrentModule: CurrentModule
+            },
+            success: function (response) {
+                Data = $.parseJSON(response);
+
+                IndexLogo = Data['Variables'][0].IndexLogo;
+
+                TemplateSource = 'http://' + ServerIp + ServerFolder+'/'+Data['Variables'][0].Template;
+                //alert(TemplateSource);
+                GetTemplateContent();
+            }
+        });
+    }
+
+    function GetTemplateContent(){
+        $.ajax({
+            type: 'POST',
+            url: TemplateSource,
+            async: false,
+            success: function (response) {
+                document.getElementById('GeneralBox').innerHTML = '<div id="DebugText"></div> '+response;
+            }
+        });
+
+        SetScriptsStyles();
+    }
+
+    function SetScriptsStyles(){
+        for(i = 0; i < Data['ScriptsHeader'].length; i++){
+            script = document.createElement('script');
+            script.setAttribute('type', 'text/javascript');
+            script.setAttribute('src', Data['ScriptsHeader'][i]);
+            head.appendChild(script);
+        }
+
+        i = 0;
+
+        for(i = 0; i < Data['Styles'].length; i++){
+            link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = Data['Styles'][i];
+
+            head.appendChild(link);
+        }
+        i = 0;
+    }
+
+    function SetFooterScripts(){
+        for(i = 0; i < Data['ScriptsFooter'].length; i++){
+            script = document.createElement('script');
+            script.setAttribute('type', 'text/javascript');
+            script.setAttribute('src', Data['ScriptsFooter'][i]);
+            //alert(Data['ScriptsFooter'][i]);
+            footer.appendChild(script);
+
+            // i++;
+            // if(i >= Data['ScriptsFooter'].length){
+            //     clearInterval(FooterInterval);
+            //     console.log('END SCRIPTS');
+            // }
+        }
+        registerkeys('tv');
+    }
+
+    //var FooterInterval = setInterval(function(){ SetFooterScripts(); }, 500);
+
+    setTimeout(function(){ SetFooterScripts(); }, 900);
+</script>
+</html>

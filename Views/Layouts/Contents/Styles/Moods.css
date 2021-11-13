@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 9, 2020, 7:41:07 PM
+    Author     : tania
+*/
+
+div#MoodsList {
+    width: 100%;
+height: 100%;
+}
+
+.Mood{
+    height: 100%;
+width: 25%;
+margin: 0;
+float: left;
+}
+
+#video1 {
+    position: fixed; 
+    bottom: 0; 
+    right: 0;
+}
+
+.Moods {
+    width: 100%;
+color: #fff;
+font-size: 45pt;
+position: fixed;
+font-family: historia;
+bottom: 5%;
+}
+
+.Moods p {
+    margin: 0;
+width: 25%;
+float: left;
+text-align: center;
+}
+
+.Selected {
+    border: 5px solid #fff;
+    width: 24.11%;
+    height: 98.5%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}

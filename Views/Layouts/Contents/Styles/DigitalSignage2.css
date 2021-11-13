@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 29, 2020, 1:03:57 PM
+    Author     : tania
+*/
+
+div.GeneralBox {
+    background: #fff;
+}
+
+#PanelRight {
+    width: 50%;
+height: 100%;
+float: right;
+}
+
+#PanelLeftTop {
+    width: 50%;
+height: 50%;
+float: right;
+}
+
+#PanelLeftBottom {
+    width: 50%;
+height: 50%;
+float: right;
+}
+
+#Pass {
+    margin: 0;
+position: fixed;
+font-size: 65px;
+font-family: serif;
+color: gray;
+top: 30%;
+left: 10%;
+}
