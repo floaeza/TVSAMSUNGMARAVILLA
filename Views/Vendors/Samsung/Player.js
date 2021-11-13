@@ -178,8 +178,8 @@ function GetWindowFullSize(){
 
 function GetWindowMinSize(){
     //Debug('TvPercentageSize: '+TvPercentageSize);
-    WindowMinWidth   = ((window.screen.width)*34)/100;
-    WindowMinHeight  = ((window.screen.height)*34)/100;
+    WindowMinWidth   = ((window.screen.width)*35)/100;
+    WindowMinHeight  = ((window.screen.height)*35)/100;
     //Debug('WindowMinHeight: '+WindowMinHeight);
 }
 
@@ -207,7 +207,7 @@ function MaximizeTV(){
  * ****************************************************************************/
 
 function MinimizeTV(){
-    Player.setDisplayRect((13.5*WindowMaxWidth)/100, (5*WindowMaxWidth)/100, WindowMinWidth, WindowMinHeight);
+    Player.setDisplayRect((13.2*WindowMaxWidth)/100, (5*WindowMaxWidth)/100, WindowMinWidth, WindowMinHeight);
 }
 
 /* *****************************************************************************
