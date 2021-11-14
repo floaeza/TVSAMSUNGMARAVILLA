@@ -874,7 +874,7 @@ function ShowInfo(){
                 StartHour = ChannelsJson[CurrentChannelPosition].PROGRAMS[IndexProgram].STRH;
                 EndHour   = ChannelsJson[CurrentChannelPosition].PROGRAMS[IndexProgram].FNLH;
                 var resultHour = CompareHours(StartHour, CurrentHour);
-                alert(StartHour + " " + CurrentHour + " " +resultHour);
+                //alert(StartHour + " " + CurrentHour + " " +resultHour);
                 //////Debug('StartHour: '+StartHour + ' CurrentHour: '+CurrentHour + ' CompareHours: ' + CompareHours(StartHour, CurrentHour));
                 if(resultHour === '='){
                     /* Asigna la posicion correcta */
