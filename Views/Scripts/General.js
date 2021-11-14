@@ -331,7 +331,7 @@
         Hours1 = null;
         Minut2 = null;
         Hours2 = null;
-
+        
         return Result;
     }
     

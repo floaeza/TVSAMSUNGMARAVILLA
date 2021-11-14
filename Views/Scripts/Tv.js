@@ -873,21 +873,22 @@ function ShowInfo(){
                 //////Debug(IndexProgram);
                 StartHour = ChannelsJson[CurrentChannelPosition].PROGRAMS[IndexProgram].STRH;
                 EndHour   = ChannelsJson[CurrentChannelPosition].PROGRAMS[IndexProgram].FNLH;
-
+                var resultHour = CompareHours(StartHour, CurrentHour);
+                alert(StartHour + " " + CurrentHour + " " +resultHour);
                 //////Debug('StartHour: '+StartHour + ' CurrentHour: '+CurrentHour + ' CompareHours: ' + CompareHours(StartHour, CurrentHour));
-                if(CompareHours(StartHour, CurrentHour) === '='){
+                if(resultHour === '='){
                     /* Asigna la posicion correcta */
                     ProgramPosition = IndexProgram;
 
                     /* Iguala IndexPrograma para terminar el ciclo FOR */
                     IndexProgram = ChannelsJson[CurrentChannelPosition].P_Length;
-                } else if(CompareHours(StartHour, CurrentHour) === '>'){
+                } else if(resultHour === '>'){
                     /* Asigna la posicion correcta */
                     ProgramPosition = IndexProgram;
 
                     /* Iguala IndexPrograma para terminar el ciclo FOR */
                     IndexProgram = ChannelsJson[CurrentChannelPosition].P_Length;
-                } else if(CompareHours(StartHour, CurrentHour) === '<' && CompareHours(EndHour, CurrentHour) === '>'){
+                } else if(resultHour === '<' && CompareHours(EndHour, CurrentHour) === '>'){
                     /* Asigna la posicion correcta */
                     ProgramPosition = IndexProgram;
 
@@ -922,13 +923,13 @@ function ShowInfo(){
                     if(window.tizen !== undefined){
                         PlayChannel(Source, Port);
                     }else
-                    PlayChannel(Source, Port, ProgramIdChannnel, ProgramIdPosition, AudioPid);   /* TvFunctions por marca */
+                        PlayChannel(Source, Port, ProgramIdChannnel, ProgramIdPosition, AudioPid);   /* TvFunctions por marca */
                 });
             }else{
                 if(window.tizen !== undefined){
                     PlayChannel(Source, Port);
                 }else
-                PlayChannel(Source, Port, ProgramIdChannnel, ProgramIdPosition, AudioPid);   /* TvFunctions por marca */
+                    PlayChannel(Source, Port, ProgramIdChannnel, ProgramIdPosition, AudioPid);   /* TvFunctions por marca */
             }
         } else {
             ////Debug('GetDigitalChannel EPG');
