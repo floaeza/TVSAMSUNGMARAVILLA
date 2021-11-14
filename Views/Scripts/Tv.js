@@ -87,7 +87,7 @@
         IndexRec              = 0;
 
     /* Canales digitales */
-    var ImageDigital            = document.getElementById('ImageDigitalChannel'),
+    var //ImageDigital            = document.getElementById('ImageDigitalChannel'),
         ActiveDigitalChannel    = false,
         DigitalContent          = [],
         IndexDigital            = 0,
@@ -467,8 +467,8 @@ function SetDigitalChannel(){
             if(FileType === 'm3u8'){
                 clearTimeout(IntervalDigital);
 
-                ImageDigital.src = '';
-                ImageDigital.style.display = 'none';
+                //ImageDigital.src = '';
+                //ImageDigital.style.display = 'none';
                 ////Debug("Antes de reproducir el canal");
                 if(load){
                     load = false;
@@ -484,8 +484,8 @@ function SetDigitalChannel(){
                 
             } else {
 
-                ImageDigital.src = DigitalSource+DigitalContent[IndexDigital];
-                ImageDigital.style.display = 'inline';
+                //ImageDigital.src = DigitalSource+DigitalContent[IndexDigital];
+                //ImageDigital.style.display = 'inline';
 
                 IntervalDigital = setInterval(SetDigitalChannel,9000);
             }
@@ -506,8 +506,8 @@ function SetDigitalChannel(){
 
 function CloseDigitalChannel(){
     ActiveDigitalChannel = false;
-    ImageDigital.src = '';
-    ImageDigital.style.display = 'none';
+    //ImageDigital.src = '';
+    //ImageDigital.style.display = 'none';
     
     clearTimeout(IntervalDigital);
 }
