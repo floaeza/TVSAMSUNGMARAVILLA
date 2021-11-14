@@ -124,7 +124,7 @@ def start(day, pos):
         payload = {'Option': 'GetChannelsInfoBypackage', 'PackageID': int(Package["id_paquete"])}
         x = requests.post('http://172.22.22.10/BBINCO/TV/Core/Controllers/PY.php', data=payload)
         channels = json.loads(x.content)
-        #print(channels)
+        print(channels)
         
         a = 0
         for channel in channels:
