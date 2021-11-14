@@ -27,6 +27,7 @@ var Checker = null;
 
 GetWindowFullSize();
 GetWindowMinSize();
+MaximizeTV();
 //setTimeout(function(){ GetWindowMinSize(); }, 2000);
 
 /* *****************************************************************************
