@@ -197,7 +197,7 @@ function MaximizeTV(){
     //         Player.setDisplayRect(0, 0, WindowMaxWidth, WindowMaxHeight);
     //     }
     // } else {
-        Player.setDisplayRect(0, 0, WindowMaxWidth, WindowMaxHeight);
+        Player.setDisplayRect(-1, -1, WindowMaxWidth, WindowMaxHeight);
     //}
 }
 
