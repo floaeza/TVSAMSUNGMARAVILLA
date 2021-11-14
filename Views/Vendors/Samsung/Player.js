@@ -172,8 +172,8 @@ function SetPosition(Pos){
  * ****************************************************************************/
 
 function GetWindowFullSize(){
-    WindowMaxWidth   = ((window.screen.width)*102)/100;
-    WindowMaxHeight  = ((window.screen.height)*102)/100;
+    WindowMaxWidth   = ((window.screen.width)*105)/100;
+    WindowMaxHeight  = ((window.screen.height)*105)/100;
 }
 
 function GetWindowMinSize(){
