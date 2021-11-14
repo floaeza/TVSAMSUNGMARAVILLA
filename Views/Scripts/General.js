@@ -237,7 +237,8 @@
         var GDate = new Date();
         var CurrentHour = GDate.getHours() - Offset,
             CurrentMinute = '';
-        alert(GDate);
+            
+        alert(CurrentHour);
         if(GDate.getMinutes() > 30){
             CurrentMinute = '30';
         }else{
