@@ -250,7 +250,7 @@
         GDate = null;
         CurrentMinute = null;
         CurrentHour = null;
-        alert(Hour);
+        //alert(Hour);
         return Hour;
     }
     
