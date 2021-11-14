@@ -2,7 +2,7 @@
 <img id='ImageDigitalChannel'>
 <div id='DigitalChannel'></div>
 
-<iframe id='ContentFrame' src=''></iframe>
+<!--<iframe id='ContentFrame' src=''></iframe>-->
 
 <div id='InfoContainer' class='BackgroundInfo'>
     <div class='ChannelNumber'></div>

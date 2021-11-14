@@ -95,7 +95,7 @@
         DigitalSource           = '',
         DigitalImgSource        = '';
 
-    var ContentFrame            = document.getElementById('ContentFrame'),
+    var //ContentFrame            = document.getElementById('ContentFrame'),
         ActiveFrame             = false;
 
     // var div = document.getElementById('loadingTV');
