@@ -2008,26 +2008,26 @@ function GetRecordingsToRecord(){
 function GetPvrInfo(){
     
     //Debug("MAAAAACC     " + MacAddress)
-    xhr = $.ajax({
-        type: 'POST',
-        cache: false,
-        //async: false,
-        url: 'Core/Controllers/Recorder.php',
-        data: {
-            Option     : 'GetPvrInfoInfomir',
-            LocationId : Device['LocationId'],
-            MacAddress : MacAddress
-        },
-        success: function (response){
-            DiskInfo = $.parseJSON(response);
-            //alert(JSON.stringify(DiskInfo));
-            //alert(DiskInfo);
-            if(DiskInfo.length > 0){
-                SetPvrInfo();
-            }
-        }
-    });
-    xhr = null;
+    // xhr = $.ajax({
+    //     type: 'POST',
+    //     cache: false,
+    //     //async: false,
+    //     url: 'Core/Controllers/Recorder.php',
+    //     data: {
+    //         Option     : 'GetPvrInfoInfomir',
+    //         LocationId : Device['LocationId'],
+    //         MacAddress : MacAddress
+    //     },
+    //     success: function (response){
+    //         DiskInfo = $.parseJSON(response);
+    //         //alert(JSON.stringify(DiskInfo));
+    //         //alert(DiskInfo);
+    //         if(DiskInfo.length > 0){
+    //             SetPvrInfo();
+    //         }
+    //     }
+    // });
+    // xhr = null;
 }
 GetPvrInfo();
 function CheckManualRecording(){

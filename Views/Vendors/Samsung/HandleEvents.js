@@ -1,28 +1,30 @@
-var videosListServer    = getInfoFromServer('getVideos'),
-    videosListLenght    = (videosListServer.length)-1,
-    multimediaPosition  = 0;
+$(function() {
+    var videosListServer    = getInfoFromServer('getVideos'),
+        videosListLenght    = (videosListServer.length)-1,
+        multimediaPosition  = 0;
 
-var audiosListServer    = getInfoFromServer('getAudios'),
-    audiosListLenght    = (audiosListServer.length)-1,
-    audiosPosition      = 0;
-
-
-/*------NEW DIGITAL CHANNEL---------------*/
-var videosDigitalListServer    = getInfoFromServer('getDigitalVideos'),
-    videosDigitalListLenght    = (videosDigitalListServer.length)-1,
-    multimediaDigitalPosition  = 0;
+    var audiosListServer    = getInfoFromServer('getAudios'),
+        audiosListLenght    = (audiosListServer.length)-1,
+        audiosPosition      = 0;
 
 
-var audiosDigitalListServer    = getInfoFromServer('getDigitalAudios'),
-    audiosDigitalListLenght    = (audiosDigitalListServer.length)-1,
-    audiosDigitalPosition      = 0;
-/*----------------------------------------*/
+    /*------NEW DIGITAL CHANNEL---------------*/
+    var videosDigitalListServer    = getInfoFromServer('getDigitalVideos'),
+        videosDigitalListLenght    = (videosDigitalListServer.length)-1,
+        multimediaDigitalPosition  = 0;
 
-/*------WEATHER CHANNEL---------------*/
-var audiosWeatherListServer    = getInfoFromServer('getWeatherAudio'),
-    audiosWeatherListLenght    = (audiosWeatherListServer.length)-1,
-    audiosWeatherPosition      = 0;
-/*----------------------------------------*/
+
+    var audiosDigitalListServer    = getInfoFromServer('getDigitalAudios'),
+        audiosDigitalListLenght    = (audiosDigitalListServer.length)-1,
+        audiosDigitalPosition      = 0;
+    /*----------------------------------------*/
+
+    /*------WEATHER CHANNEL---------------*/
+    var audiosWeatherListServer    = getInfoFromServer('getWeatherAudio'),
+        audiosWeatherListLenght    = (audiosWeatherListServer.length)-1,
+        audiosWeatherPosition      = 0;
+    /*----------------------------------------*/
+});
 
 var listener = {
     onbufferingstart: function() {
