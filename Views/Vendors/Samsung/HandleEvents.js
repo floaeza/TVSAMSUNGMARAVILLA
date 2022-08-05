@@ -41,7 +41,6 @@ var listener = {
         Debug('Stream Completed > end');
         EventString = 'CONNECTION_STOPPED';
 
-
         if(CurrentModule === 'Tv'){
             //SetDigitalChannel();
             if (digitalMediaTypeToPlay != null) {
