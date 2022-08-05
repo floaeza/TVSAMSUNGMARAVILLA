@@ -11,7 +11,7 @@ require_once './../DataAccess/Packages.php';
 
     $CurrentController = 'DeviceDashboard';
 
-    $Option            = !empty($_POST['Option']) ? $_POST['Option'] : 'DeviceList';
+    $Option            = !empty($_POST['Option']) ? $_POST['Option'] : 'RebootDevices';
     $MacAddress        = !empty($_POST['MacAddress']) ? $_POST['MacAddress'] : '00:02:02:6c:64:1e';
     $DeviceArray       = !empty($_POST['DeviceArray']) ? $_POST['DeviceArray'] : '';
     $RebootStatus      = !empty($_POST['RebootStatus']) ? $_POST['RebootStatus'] : '0';
@@ -143,29 +143,16 @@ switch ($Option){
             $Response = $DeviceListResult; 
             break;
         case 'RebootDevices':
-            $DataDevices  = json_decode($DeviceArray);
-            $DevicesUpdateData = array('reiniciar'=>1);
-            foreach ($DataDevices as $DataDevice):    
-                $DeviceID = $DataDevice->id_dispositivo; 
-                $DevicesData->updateDevice($DeviceID, $DevicesUpdateData);
-            endforeach;
-            $NewPackage = array(
-                'valor_parametro' => $RebootStatus,   
-                ); 
-            $PackagesData->updateParameterReboot($NewPackage);
-             //$resultado = shell_exec('cd /var/www/html/BBINCO/TV/Core/Controllers && python3 DebugTr.py');  
-            // $command = escapeshellcmd('/var/www/html/BBINCO/TV/Core/Controllers/RebootTelnet.py');
-            // $output = shell_exec($command);
-            // $Result = $output;
-            // $Response = $Result;
-
-            // $gestor = popen('cd /var/www/html/BBINCO/TV/Core/Controllers && python3 RebootTelnet.py', 'r');
-            // $leer = fread($gestor, 2096);
-            // $Response = $leer;
-            // pclose($gestor);
-            $command = escapeshellcmd('sudo /usr/bin/python3 RebootTelnet.py');
-            $output = shell_exec($command);
-            $Response = $output;
+           $DataDevices  = json_decode($DeviceArray);
+            foreach ($DataDevices as $DataDevice){
+               	$DeviceToReboot= $DataDevice->modelo.",".$DataDevice->ip;  
+                $command = escapeshellcmd('sudo /usr/bin/python3 RebootTelnet.py'.' '.$DeviceToReboot);
+		//$command = escapeshellcmd('sudo /usr/bin/python3 RebootTelnet.py A50,172.22.22.93')
+                $output = shell_exec($command);              
+            }
+	     // $command = escapeshellcmd('sudo /usr/bin/python3 RebootTelnet.py 500x,172.22.23.91');
+             // $output = shell_exec($command);
+	     // $Response = $output;
             break;
         case 'UpdateParameter':
             $NewPackage = array(

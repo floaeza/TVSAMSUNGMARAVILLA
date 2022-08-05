@@ -51,7 +51,7 @@
                 } 
             }
 
-            $Response = array('Option' => $Option,'Mac' => $MacAddress);
+            $Response = array('Option' => $Option,'Mac' => $MacAddress, 'Test' => $EffectiveTime);
                 
             echo json_encode($Response);
         break;
@@ -138,7 +138,7 @@
                 
                 $Option = 'LICENSE';
 
-                $Response = array('Option' => $Option);
+                $Response = array('Option' => $Option, 'Test' => $DeviceId);
             }
             
             echo json_encode($Response);
