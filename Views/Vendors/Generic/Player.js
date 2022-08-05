@@ -34,8 +34,8 @@
 
 
 
-        document.getElementById('DigitalChannel').innerHTML = '<video id="VideoPlaying" autoplay loop><source src='+Sources[IndexChannel]+' type="video/mp4"></video>';
-        document.getElementById('DigitalChannel').style.display = 'inline';
+        // document.getElementById('DigitalChannel').innerHTML = '<video id="VideoPlaying" autoplay loop><source src='+Sources[IndexChannel]+' type="video/mp4"></video>';
+        // document.getElementById('DigitalChannel').style.display = 'inline';
 
         IndexChannel++;
 
@@ -55,8 +55,8 @@
         // Activamos la bandera
         PlayingChannel = true;
 
-        document.getElementById('DigitalChannel').innerHTML = '<video id="VideoPlaying" autoplay loop><source src='+Sources[IndexChannel]+' type="video/mp4"></video>';
-        document.getElementById('DigitalChannel').style.display = 'inline';
+        // document.getElementById('DigitalChannel').innerHTML = '<video id="VideoPlaying" autoplay loop><source src='+Sources[IndexChannel]+' type="video/mp4"></video>';
+        // document.getElementById('DigitalChannel').style.display = 'inline';
 
         IndexChannel++;
 

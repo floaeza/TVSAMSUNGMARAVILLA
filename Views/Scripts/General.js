@@ -33,6 +33,12 @@
         MM_DifferenceInSec    = '',
         xhr;
     var ObjectWeather =[];
+    var mediaTypeToPlay         = null,
+        digitalMediaTypeToPlay  = null,
+        PlayingChannel          = null,
+        PlayDigita              = null,
+        imageDLLInterval        = null,
+        playingWeatherChannel   = null;
 
         window.localStorage;
 

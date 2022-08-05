@@ -1,7 +1,180 @@
 <!--Contenido canal digital -->
-<img id='ImageDigitalChannel'>
-<div id='DigitalChannel'></div>
 
+<!-- <div id='DigitalChannel'></div> -->
+
+<!---------- NEW DIGITAL CHANNEL ------------>
+<img id='ImageDigitalChannel'>
+<video id="digitalVideoContent" type="video/mp4" autoplay style="width: 100%; display: none;">
+    Your browser does not support the video tag.
+</video>
+<!------------------------------------------->
+<!-------------- WEATHER CHANNEL ------------>
+<div id= "weatherChannel" class="weatherContainer">
+    <div class="weatherTodayContainer">
+        <div class="InfoContainer">
+            <div class="weatherHeadContainerLeft">
+                <div class="weatherTitle">
+                    <span>Loreto, B.C.S., México</span>
+                </div>
+            </div>         
+            <div class="weatherHeadContainerRight">
+                <div class="weatherDate">
+                    <span id="weatherDateTitle">Tuesday February 28</span>
+                </div>
+            </div>
+            <div class="weatherHour">
+                <span id="weatherHourTitle">09:52 a.m</span>
+            </div>
+        </div>
+        <div class="InfoContainer">
+            <div class="weatherTemperatureLeft">
+                <div class="weatherIcon">
+                    <img id ="weatherIconToday" src="Media/WeatherChannel/sunny.png" alt="">
+                </div>
+                <div class="weatherTemperature">
+                    <span id="weatherTemperatureToday">78°C</span>
+                </div>
+            </div>         
+            <div class="weatherReportRight">
+                <div class="weatherReportTodayInfo">
+                    <span id="weatherReport">SUNNY</span>
+                </div>
+                <div class="weatherReportTodayExtraInfo">
+                    <img src="Media/WeatherChannel/heavyRain.png" alt="" class="rainIcon">
+                    <span id="rainInfo" class="rainInfo">5%</span>
+                    <img class="wetIcon" src="Media/WeatherChannel/wet.png" alt="">
+                    <span id="wetInfo" class="wetInfo">15%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weatherNextDaysContainer">
+        <div id="forecastDaysTitle" class="nextDayInfoContainer">
+            <div class="dayTitle">
+                <span>Wed</span>
+            </div>
+            <div class="dayTitle">
+                <span>Thu</span>
+            </div>
+            <div class="dayTitle">
+                <span>Fri</span>
+            </div>
+            <div class="dayTitle">
+                <span>Sat</span>
+            </div>
+            <div class="dayTitle">
+                <span>Sun</span>
+            </div>
+        </div>
+        <div id="forecastDaysIcon" class="nextDayInfoContainer">
+            <div class="dayIcon">
+                <img src="Media/WeatherChannel/nublado.png" alt="">
+            </div>
+            <div class="dayIcon">
+                <img src="Media/WeatherChannel/rain.png" alt="">
+            </div>
+            <div class="dayIcon">
+                <img src="Media/WeatherChannel/superNublado.png" alt="">
+            </div>
+            <div class="dayIcon">
+                <img src="Media/WeatherChannel/ventoso.png" alt="">
+            </div>
+            <div class="dayIcon">
+                <img src="Media/WeatherChannel/sunny.png" alt="">
+            </div>
+        </div>
+        <div id="forecastDaysTemperature" class="nextDayInfoContainer">
+            <div class="dayMaxMin">
+                <div>
+                    <span>25°C</span>
+                </div>
+                <div>
+                    <span>23°C</span>
+                </div>
+            </div>
+            <div class="dayMaxMin">
+                <div>
+                    <span>25°C</span>
+                </div>
+                <div>
+                    <span>23°C</span>
+                </div>
+            </div>
+            <div class="dayMaxMin">
+                <div>
+                    <span>25°C</span>
+                </div>
+                <div>
+                    <span>23°C</span>
+                </div>
+            </div>
+            <div class="dayMaxMin">
+                <div>
+                    <span>25°C</span>
+                </div>
+                <div>
+                    <span>23°C</span>
+                </div>
+            </div>
+            <div class="dayMaxMin">
+                <div>
+                    <span>25°C</span>
+                </div>
+                <div>
+                    <span>23°C</span>
+                </div>
+            </div>
+        </div>
+        <div id="forecastDaysRealFeel" class="nextDayInfoContainer" style="background-color: #31804a;">
+            <div class="realFeelInfo">
+                <div>
+                    <span>Real Feel</span>
+                </div>
+                <div>
+                    <span>23°C</span>
+                </div>
+            </div>
+            <div class="realFeelInfo">
+                <div>
+                    <span>Real Feel</span>
+                </div>
+                <div>
+                    <span>23°C</span>
+                </div>
+            </div>
+            <div class="realFeelInfo">
+                <div>
+                    <span>Real Feel</span>
+                </div>
+                <div>
+                    <span>23°C</span>
+                </div>
+            </div>
+            <div class="realFeelInfo">
+                <div>
+                    <span>Real Feel</span>
+                </div>
+                <div>
+                    <span>23°C</span>
+                </div>
+            </div>
+            <div class="realFeelInfo">
+                <div>
+                    <span>Real Feel</span>
+                </div>
+                <div>
+                    <span>23°C</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logoWeatherChannel">
+        <div class="logoContainer">
+            <img id="logoWeatherChannel" src="Media/Logos/VPL/LogoWhite.png" alt="">
+        </div>
+    </div>
+</div>
+<!------------------------------------------->
 <!--<iframe id='ContentFrame' src=''></iframe>-->
 
 <div id='InfoContainer' class='BackgroundInfo'>

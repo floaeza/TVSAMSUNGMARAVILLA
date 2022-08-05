@@ -12,7 +12,7 @@ if($GetJson == true){
     $ConfigData  = new Config('system','Libraries');
     $Client = $ConfigData->getConfigByName('Identifier').'/';
     $EpgLogo = $ConfigData->getConfigByName('EpgLogo');
-    $JsonLibraries['EpgLogo'] = '/BBINCO/TV/Media/Logos/'.$Client.$EpgLogo;
+    $JsonLibraries['EpgLogo'] = '/BBINCO/TVS/Media/Logos/'.$Client.$EpgLogo;
 }
 
 $ServerIp = !empty($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : '';
@@ -22,13 +22,13 @@ $ServerIp = !empty($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : '';
     }
 
 $JsonLibraries['ServerRoot']        = 'http://'.$ServerIp.'/';
-$JsonLibraries['ServerSource']      = 'http://'.$ServerIp.'/BBINCO/TV/';
+$JsonLibraries['ServerSource']      = 'http://'.$ServerIp.'/BBINCO/TVS/';
 $JsonLibraries['MediaSource']       = 'http://'.$ServerIp.'/BBINCO/';
 $JsonLibraries['MultimediaSource']  = 'http://'.$ServerIp.'/Multimedia/';
 $JsonLibraries['MoviesSource']      = 'http://'.$ServerIp.'/vod/mvs/';
 $JsonLibraries['SeriesSource']      = 'http://'.$ServerIp.'/vod/srs/';
 
-$ServerSource = 'http://'.$ServerIp.'/BBINCO/TV/';
+$ServerSource = 'http://'.$ServerIp.'/BBINCO/TVS/';
 
 
 /* Views */
