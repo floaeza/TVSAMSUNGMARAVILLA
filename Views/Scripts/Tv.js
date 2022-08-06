@@ -102,8 +102,7 @@
         sourceImages        = '/BBINCO/Admin/Views/Assets/img/channelImages/';
 
     /******************************* WEATHER CHANNEL *************************************************************/
-    $(document).ready(function() {
-        var weatherContent                  = document.getElementById('weatherChannel'),
+        var weatherContent                      = document.getElementById('weatherChannel'),
             actualDate                          = new Date(),
             weatherHourTitle                    = document.getElementById('weatherHourTitle'),
             weatherTemperatureToday             = document.getElementById('weatherTemperatureToday'),
@@ -137,7 +136,6 @@
             weatherIconToday.src                = 'Media/WeatherChannel/'+getWeatherIcon(weatherInfo[0]['weatherCode']);
             weatherHourTitle.innerHTML          = formatAMPM(actualDate);
             fillWeatherIcons();
-    });
 
     // var div = document.getElementById('loadingTV');
     // var parent = div.parentElement;
@@ -335,6 +333,7 @@ function SetChannel(NewDirection){
                     CloseDigitalChannel();
                 }
                 var deviceAux = getDevice();
+                    console.log(deviceAux);
 
                 if (deviceAux == 'explorador') {
                     var video = document.getElementById("digitalVideoContent");
@@ -370,12 +369,12 @@ function SetChannel(NewDirection){
                 //PlayChannel(Source, Port);   /* TvFunctions por marca */
             } else {
                 Debug('GetDigitalChannel');
-                cleanVideoImage();
-                if (ChannelsJson[ChannelPosition].INDC === 'Promo'){
-                    newDigitalChannel();
-                }else if (ChannelsJson[ChannelPosition].INDC === 'Clima'){
-                    weatherChannel();
-                }
+                // cleanVideoImage();
+                // if (ChannelsJson[ChannelPosition].INDC === 'Promo'){
+                //     newDigitalChannel();
+                // }else if (ChannelsJson[ChannelPosition].INDC === 'Clima'){
+                //     weatherChannel();
+                // }
             }
         
     }
@@ -389,7 +388,7 @@ function getInfoFromServer(option) {
         case 'getVideos':
             $.ajax({
                 type: "POST",
-                url: sourceController+'Videos.php',
+                url: 'http://' + ServerIp +sourceController+'Videos.php',
                 data: { 
                     Option    : 'getVideosList',
                 }, 
@@ -403,7 +402,7 @@ function getInfoFromServer(option) {
         case 'getAudios':
             $.ajax({
                 type: "POST",
-                url: sourceController+'Audios.php',
+                url: 'http://' + ServerIp +sourceController+'Audios.php',
                 data: { 
                     Option    : 'getAudiosList',
                 }, 
@@ -417,7 +416,7 @@ function getInfoFromServer(option) {
         case 'getImages':
             $.ajax({
                 type: "POST",
-                url: sourceController+'Images.php',
+                url: 'http://' + ServerIp +sourceController+'Images.php',
                 data: { 
                     Option    : 'getImagesList',
                 }, 
@@ -431,7 +430,7 @@ function getInfoFromServer(option) {
         case 'getMediaType':
             $.ajax({
                 type: "POST",
-                url: sourceTvController+'PY.php',
+                url: 'http://' + ServerIp +sourceTvController+'PY.php',
                 data: { 
                     Option    : 'GetMediaType',
                 }, 
@@ -445,7 +444,7 @@ function getInfoFromServer(option) {
         case 'getImageInterval':
             $.ajax({
                 type: "POST",
-                url: sourceTvController+'PY.php',
+                url: 'http://' + ServerIp +sourceTvController+'PY.php',
                 data: { 
                     Option    : 'GetImageInterval',
                 }, 
@@ -459,7 +458,7 @@ function getInfoFromServer(option) {
         case 'getDigitalVideos':
             $.ajax({
                 type: "POST",
-                url: sourceController+'VideosChannel.php',
+                url: 'http://' + ServerIp +sourceController+'VideosChannel.php',
                 data: { 
                     Option    : 'getVideosList',
                 }, 
@@ -473,7 +472,7 @@ function getInfoFromServer(option) {
         case 'getDigitalAudios':
             $.ajax({
                 type: "POST",
-                url: sourceController+'DigitalAudios.php',
+                url: 'http://' + ServerIp +sourceController+'DigitalAudios.php',
                 data: { 
                     Option    : 'getAudiosList',
                 }, 
@@ -487,7 +486,7 @@ function getInfoFromServer(option) {
         case 'getDigitalImages':
             $.ajax({
                 type: "POST",
-                url: sourceController+'ImagesChannel.php',
+                url: 'http://' + ServerIp +sourceController+'ImagesChannel.php',
                 data: { 
                     Option    : 'getImagesList',
                 }, 
@@ -501,7 +500,7 @@ function getInfoFromServer(option) {
         case 'getDigitalMediaType':
             $.ajax({
                 type: "POST",
-                url: sourceTvController+'PY.php',
+                url: 'http://' + ServerIp +sourceTvController+'PY.php',
                 data: { 
                     Option    : 'GetDigitalMediaType',
                 }, 
@@ -515,7 +514,7 @@ function getInfoFromServer(option) {
         case 'getDigitalImageInterval':
             $.ajax({
                 type: "POST",
-                url: sourceTvController+'PY.php',
+                url: 'http://' + ServerIp +sourceTvController+'PY.php',
                 data: { 
                     Option    : 'GetDigitalImageInterval',
                 }, 
@@ -529,7 +528,7 @@ function getInfoFromServer(option) {
         case 'getWeatherForecast':
             $.ajax({
                 type: "GET",
-                url: sourceController+'weatherForecast.php',
+                url: 'http://' + ServerIp +sourceController+'weatherForecast.php',
                 async: false,
                 success: function (response) {
                     VideosList  = $.parseJSON(response);
@@ -540,7 +539,7 @@ function getInfoFromServer(option) {
         case 'getWeatherAudio':
             $.ajax({
                 type: "POST",
-                url: sourceController+'WeatherAudios.php',
+                url: 'http://' + ServerIp +sourceController+'WeatherAudios.php',
                 data: { 
                     Option    : 'getAudiosList',
                 }, 

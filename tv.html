@@ -160,7 +160,6 @@
     }
 
     function SetFooterScripts(){
-        console.log(Data);
         for(i = 0; i < Data['ScriptsFooter'].length; i++){
             script = document.createElement('script');
             script.setAttribute('type', 'text/javascript');
@@ -174,7 +173,7 @@
             //     console.log('END SCRIPTS');
             // }
         }
-        registerkeys('tv');
+        // registerkeys('tv');
     }
 
     //var FooterInterval = setInterval(function(){ SetFooterScripts(); }, 500);
