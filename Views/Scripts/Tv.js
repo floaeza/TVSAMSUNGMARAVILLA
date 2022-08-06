@@ -103,39 +103,39 @@
 
     /******************************* WEATHER CHANNEL *************************************************************/
     $(document).ready(function() {
-        var weatherContent                      = document.getElementById('weatherChannel'),
-        actualDate                          = new Date(),
-        weatherHourTitle                    = document.getElementById('weatherHourTitle'),
-        weatherTemperatureToday             = document.getElementById('weatherTemperatureToday'),
-        weatherIconToday                    = document.getElementById('weatherIconToday'),                          
-        weatherReport                       = document.getElementById('weatherReport'),
-        rainInfo                            = document.getElementById('rainInfo'),
-        wetInfo                             = document.getElementById('wetInfo'),
-        forecastDaysTitle                   = document.getElementById('forecastDaysTitle'),
-        forecastDaysTitleChildren           = forecastDaysTitle.children,
-        forecastDaysIcon                    = document.getElementById('forecastDaysIcon'),
-        forecastDaysIconChildren            = forecastDaysIcon.children,
-        forecastDaysTemperature             = document.getElementById('forecastDaysTemperature'),
-        forecastDaysTemperatureChildren     = forecastDaysTemperature.children,
-        forecastDaysRealFeel                = document.getElementById('forecastDaysRealFeel'),
-        forecastDaysRealFeelChildren        = forecastDaysRealFeel.children,
-        days                                = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        monthNames                          = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"],
-        dayName                             = days[actualDate.getDay()],
-        monthName                           = monthNames[actualDate.getMonth()],
-        dayNumber                           = actualDate.getDate(),
-        minutesToRefresh                    = [0,6,11,16,21,26,31,36,41,46,51,56],
-        weatherDate                         = document.getElementById('weatherDateTitle'),
-        positionDigitalChannelImage         = 0; 
-        weatherInfo                         = getInfoFromServer('getWeatherForecast');
+        var weatherContent                  = document.getElementById('weatherChannel'),
+            actualDate                          = new Date(),
+            weatherHourTitle                    = document.getElementById('weatherHourTitle'),
+            weatherTemperatureToday             = document.getElementById('weatherTemperatureToday'),
+            weatherIconToday                    = document.getElementById('weatherIconToday'),                          
+            weatherReport                       = document.getElementById('weatherReport'),
+            rainInfo                            = document.getElementById('rainInfo'),
+            wetInfo                             = document.getElementById('wetInfo'),
+            forecastDaysTitle                   = document.getElementById('forecastDaysTitle'),
+            forecastDaysTitleChildren           = forecastDaysTitle.children,
+            forecastDaysIcon                    = document.getElementById('forecastDaysIcon'),
+            forecastDaysIconChildren            = forecastDaysIcon.children,
+            forecastDaysTemperature             = document.getElementById('forecastDaysTemperature'),
+            forecastDaysTemperatureChildren     = forecastDaysTemperature.children,
+            forecastDaysRealFeel                = document.getElementById('forecastDaysRealFeel'),
+            forecastDaysRealFeelChildren        = forecastDaysRealFeel.children,
+            days                                = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            monthNames                          = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"],
+            dayName                             = days[actualDate.getDay()],
+            monthName                           = monthNames[actualDate.getMonth()],
+            dayNumber                           = actualDate.getDate(),
+            minutesToRefresh                    = [0,6,11,16,21,26,31,36,41,46,51,56],
+            weatherDate                         = document.getElementById('weatherDateTitle'),
+            positionDigitalChannelImage         = 0; 
+            weatherInfo                         = getInfoFromServer('getWeatherForecast');
 
-        weatherTemperatureToday.innerHTML   = weatherInfo[0]['temp']+' C°';
-        weatherReport.innerHTML             = weatherInfo[0]['weather'];
-        rainInfo.innerHTML                  = weatherInfo[0]['precip']+' %';
-        wetInfo.innerHTML                   = weatherInfo[0]['dewpt']+' %';
-        weatherDate.innerHTML               = dayName+' '+monthName+' '+dayNumber+' '; 
-        weatherIconToday.src                = 'Media/WeatherChannel/'+getWeatherIcon(weatherInfo[0]['weatherCode']);
-        weatherHourTitle.innerHTML          = formatAMPM(actualDate);
+            weatherTemperatureToday.innerHTML   = weatherInfo[0]['temp']+' C°';
+            weatherReport.innerHTML             = weatherInfo[0]['weather'];
+            rainInfo.innerHTML                  = weatherInfo[0]['precip']+' %';
+            wetInfo.innerHTML                   = weatherInfo[0]['dewpt']+' %';
+            weatherDate.innerHTML               = dayName+' '+monthName+' '+dayNumber+' '; 
+            weatherIconToday.src                = 'Media/WeatherChannel/'+getWeatherIcon(weatherInfo[0]['weatherCode']);
+            weatherHourTitle.innerHTML          = formatAMPM(actualDate);
         fillWeatherIcons();
     });
 
