@@ -102,7 +102,8 @@
         sourceImages        = '/BBINCO/Admin/Views/Assets/img/channelImages/';
 
     /******************************* WEATHER CHANNEL *************************************************************/
-    var weatherContent                      = document.getElementById('weatherChannel'),
+    $(document).ready(function() {
+        var weatherContent                      = document.getElementById('weatherChannel'),
         actualDate                          = new Date(),
         weatherHourTitle                    = document.getElementById('weatherHourTitle'),
         weatherTemperatureToday             = document.getElementById('weatherTemperatureToday'),
@@ -136,6 +137,8 @@
         weatherIconToday.src                = 'Media/WeatherChannel/'+getWeatherIcon(weatherInfo[0]['weatherCode']);
         weatherHourTitle.innerHTML          = formatAMPM(actualDate);
         fillWeatherIcons();
+    });
+
     // var div = document.getElementById('loadingTV');
     // var parent = div.parentElement;
     // parent.removeChild(div);
