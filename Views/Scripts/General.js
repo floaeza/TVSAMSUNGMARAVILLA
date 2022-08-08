@@ -39,6 +39,9 @@
         PlayDigita              = null,
         imageDLLInterval        = null,
         playingWeatherChannel   = null;
+    var sourceController    = '/BBINCO/Admin/Core/Querys/',
+        sourceTvController  = '/BBINCO/TV7/Core/Controllers/',
+        sourceImages        = '/BBINCO/Admin/Views/Assets/img/channelImages/';
 
         window.localStorage;
 
@@ -500,3 +503,663 @@ function ConvertToHourEpoch(time24){
         });
         xhr = null;
     }
+/*--------------New Digital Channel--------------*/
+function getInfoFromServer(option) { 
+    var aux = null;
+    switch (option) {
+        case 'getVideos':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceController+'Videos.php',
+                data: { 
+                    Option    : 'getVideosList',
+                }, 
+                async: false,
+                success: function (response) {
+                    VideosList  = $.parseJSON(response);
+                    aux         = VideosList;
+                }
+              });
+        break;
+        case 'getAudios':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceController+'Audios.php',
+                data: { 
+                    Option    : 'getAudiosList',
+                }, 
+                async: false,
+                success: function (response) {
+                    AudiosList  = $.parseJSON(response);
+                    aux         = AudiosList;
+                }
+              });
+        break;
+        case 'getImages':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceController+'Images.php',
+                data: { 
+                    Option    : 'getImagesList',
+                }, 
+                async: false,
+                success: function (response) {
+                    ImagesList  = $.parseJSON(response);
+                    aux         = ImagesList;
+                }
+              });
+        break;
+        case 'getMediaType':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceTvController+'PY.php',
+                data: { 
+                    Option    : 'GetMediaType',
+                }, 
+                async: false,
+                success: function (response) {
+                    mediaType  = $.parseJSON(response);
+                    aux         = mediaType;
+                }
+              });
+        break;
+        case 'getImageInterval':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceTvController+'PY.php',
+                data: { 
+                    Option    : 'GetImageInterval',
+                }, 
+                async: false,
+                success: function (response) {
+                    imageInterval  = $.parseJSON(response);
+                    aux             = imageInterval;
+                }
+              });
+        break;
+        case 'getDigitalVideos':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceController+'VideosChannel.php',
+                data: { 
+                    Option    : 'getVideosList',
+                }, 
+                async: false,
+                success: function (response) {
+                    DigitalVideosList  = $.parseJSON(response);
+                    aux         = DigitalVideosList;
+                }
+              });
+        break;
+        case 'getDigitalAudios':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceController+'DigitalAudios.php',
+                data: { 
+                    Option    : 'getAudiosList',
+                }, 
+                async: false,
+                success: function (response) {
+                    AudiosList  = $.parseJSON(response);
+                    aux         = AudiosList;
+                }
+              });
+        break;
+        case 'getDigitalImages':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceController+'ImagesChannel.php',
+                data: { 
+                    Option    : 'getImagesList',
+                }, 
+                async: false,
+                success: function (response) {
+                    ImagesList  = $.parseJSON(response);
+                    aux         = ImagesList;
+                }
+              });
+        break;
+        case 'getDigitalMediaType':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceTvController+'PY.php',
+                data: { 
+                    Option    : 'GetDigitalMediaType',
+                }, 
+                async: false,
+                success: function (response) {
+                    DmediaType  = $.parseJSON(response);
+                    aux         = DmediaType;
+                }
+              });
+        break;
+        case 'getDigitalImageInterval':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceTvController+'PY.php',
+                data: { 
+                    Option    : 'GetDigitalImageInterval',
+                }, 
+                async: false,
+                success: function (response) {
+                    imageInterval  = $.parseJSON(response);
+                    aux             = imageInterval;
+                }
+              });
+        break;
+        case 'getWeatherForecast':
+            $.ajax({
+                type: "GET",
+                url: 'http://' + ServerIp +sourceController+'weatherForecast.php',
+                async: false,
+                success: function (response) {
+                    VideosList  = $.parseJSON(response);
+                    aux         = VideosList;
+                }
+            });
+        break;
+        case 'getWeatherAudio':
+            $.ajax({
+                type: "POST",
+                url: 'http://' + ServerIp +sourceController+'WeatherAudios.php',
+                data: { 
+                    Option    : 'getAudiosList',
+                }, 
+                async: false,
+                success: function (response) {
+                    AudiosList  = $.parseJSON(response);
+                    aux         = AudiosList;
+                }
+              });
+        break;
+    }
+    return aux;
+}
+function getDevice(){
+    var device = 'explorador';
+    if (typeof(ASTB) !== 'undefined') {
+        device = 'amino';
+    } else if (typeof(ENTONE) !== 'undefined') {
+        device = 'kamai';
+    } else if (typeof(gSTB) !== 'undefined'){
+        device = 'infomir';
+    }  else if (window.tizen !== undefined) {
+        device = 'samsung';
+    }
+    return device;
+}
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+ charactersLength));
+   }
+   return result;
+}
+function playMultimedia(device, videosList, position) {
+    console.log(device);
+    var videoName           = videosList[position]['VIDEO'].split('/'),
+        videoName           = videoName[9],
+        videoSource         = '/BBINCO/Admin/Views/Assets/DigitalChannelVideos/', 
+        serverVideoSource   = 'http://10.0.3.241/',
+        source              = serverVideoSource+videoSource+videoName;
+    switch (device) {
+        case 'amino':
+            // Guarda la estadistica
+                StopVideo();
+            // Reproduce el video
+                AVMedia.Play('src='+ source);
+                Debug('video: '+ source);
+            // Maximiza el video en caso de que no este en pantalla completa
+                MaximizeTV();
+        break;
+        case 'explorador':
+            var videoContent        = document.getElementById('digitalVideoContent');
+                videoContent.style.display = 'inline';
+                videosListLenght    = videosList.length-1;
+                position            = 0;
+                videoName           = videosList[position]['VIDEO'].split('/');
+                videoName           = videoName[9];
+                videoSource         = '/BBINCO/Admin/Views/Assets/DigitalChannelVideos/';
+                serverVideoSource   = 'http://172.16.0.103/';
+                source              = serverVideoSource+videoSource+videoName;
+                videoContent.src    = source;
+                $("#digitalVideoContent").on('ended', function(){
+                  if ( videosListLenght== position){
+                    position  = 0;
+                    videosList  = getInfoFromServer('getDigitalVideos');
+                    videosListLenght    = (videosList.length)-1;
+                  }else{
+                    position = position+1;
+                  }
+                  videoName           = videosList[position]['VIDEO'].split('/');
+                  videoName           = videoName[9];
+                  source              = serverVideoSource+videoSource+videoName;
+                  videoContent.src    = source;
+                });
+        break;
+        case 'kamai':
+            ENTONE.video.cleanupAll();
+            Debug('Source= '+source);
+            // Variables kamai
+            var Video   = new ENTONE.video(1,0);
+                Video.setPltvBuffer(7200);
+                Video.open(source);
+                Video.play(1);
+                Video.setVideoCallback(HandleVideo);
+        break;
+        case 'samsung':
+            PlayVideo(source);
+        break;
+    }
+}
+function changeImageFromDigitalChannel() {
+    var imagesList                  = getInfoFromServer('getDigitalImages'),
+        imageContent                = document.getElementById('ImageDigitalChannel'),
+        imagesListLength            = imagesList.length-1, 
+        interval                    = getInfoFromServer('getDigitalImageInterval'),
+        interval                    = interval[0]['Interval'];
+        if (positionDigitalChannelImage === imagesListLength) {
+            positionDigitalChannelImage = 0;
+            // imagesList          = getInfoFromServer('getDigitalImages');
+            // imagesListLength    = imagesList.length-1; 
+            // interval            = getInfoFromServer('getDigitalImageInterval');
+            // interval            = interval[0]['Interval'];
+        }else{
+            positionDigitalChannelImage = positionDigitalChannelImage+1;
+        }
+        var x                           = makeid(5);
+            imageName                   = imagesList[positionDigitalChannelImage]['IMG'].split('/');
+            imagePath                   = sourceImages+imageName[10];
+            imageContent.src            = 'http://' + ServerIp + imagePath+'?t='+x;
+        // x = makeid(5);
+        // imageName = imagesList[position]['IMG'].split('/');
+        // imagePath = sourceImages+imageName[10];
+        // imageContent.src = imagePath+'?t='+x;
+        console.log('Image: '+imagePath+'?t='+x);
+        imageDLLInterval = setTimeout(function(){
+            changeImageFromDigitalChannel();
+        }, interval*1000);
+}
+function playImages(device,audiosList) {
+    switch (device) {
+        case 'amino':
+            var   imageContent                = document.getElementById('ImageDigitalChannel');
+                  imageContent.style.display  = 'inline';
+            // var imagesList                  = getInfoFromServer('getDigitalImages'),
+            //     imagesListLength            = imagesList.length-1; 
+            //     interval                    = getInfoFromServer('getDigitalImageInterval'),
+            //     interval                    = interval[0]['Interval'],
+            //     imageContent                = document.getElementById('ImageDigitalChannel'),
+            //     imageContent.style.display  = 'inline';
+            //     position                    = 0;
+            // var  x                          = makeid(5);
+            //      imageName = imagesList[position]['IMG'].split('/');
+            //      imagePath = sourceImages+imageName[10];
+            //      imageContent.src = imagePath+'?t='+x;
+            // Debug('Image: '+imagePath+'?t='+x);
+            // imageDLLInterval = setInterval(function () {
+            //     if (position === imagesListLength) {
+            //         position = 0;
+            //         imagesList          = getInfoFromServer('getDigitalImages');
+            //         imagesListLength    = imagesList.length-1; 
+            //         interval            = getInfoFromServer('getDigitalImageInterval');
+            //         interval            = interval[0]['Interval'];
+            //     }else{
+             
+            //         position = position+1;
+            //     }
+            //     x = makeid(5);
+            //     imageName = imagesList[position]['IMG'].split('/');
+            //     imagePath = sourceImages+imageName[10];
+            //     imageContent.src = imagePath+'?t='+x;
+            //     Debug('Image: '+imagePath+'?t='+x);
+            // },interval*1000);
+            changeImageFromDigitalChannel();
+            setTimeout(function(){
+                playAudio('amino', audiosList, 0);
+            },1500);  
+        break;
+        case 'explorador':
+            var   imageContent                = document.getElementById('ImageDigitalChannel');
+                  imageContent.style.display  = 'inline';
+            changeImageFromDigitalChannel();
+            // var imagesList                  = getInfoFromServer('getDigitalImages'),
+            //     imagesListLength            = imagesList.length-1; 
+            //     interval                    = getInfoFromServer('getDigitalImageInterval'),
+            //     interval                    = interval[0]['Interval'],
+            //     imageContent                = document.getElementById('ImageDigitalChannel'),
+            //     imageContent.style.display  = 'inline';
+            //     position                    = 0;
+            // var  x                          = makeid(5);
+            //      imageName = imagesList[position]['IMG'].split('/');
+            //      imagePath = sourceImages+imageName[10];
+            //      imageContent.src = imagePath+'?t='+x;
+            // console.log('Image: '+imagePath+'?t='+x);
+            // imageDLLInterval = setInterval(function () {
+            //     if (position === imagesListLength) {
+            //         position = 0;
+            //         imagesList          = getInfoFromServer('getDigitalImages');
+            //         imagesListLength    = imagesList.length-1; 
+            //         interval            = getInfoFromServer('getDigitalImageInterval');
+            //         interval            = interval[0]['Interval'];
+            //     }else{
+            //         position = position+1;
+            //     }
+            //     x = makeid(5);
+            //     imageName = imagesList[position]['IMG'].split('/');
+            //     imagePath = sourceImages+imageName[10];
+            //     imageContent.src = imagePath+'?t='+x;
+            //     console.log('Image: '+imagePath+'?t='+x);               
+            // },interval*1000);
+        break;
+        case  'kamai':
+            var imagesList                  = getInfoFromServer('getDigitalImages'),
+                imagesListLength            = imagesList.length-1; 
+                interval                    = getInfoFromServer('getDigitalImageInterval'),
+                interval                    = interval[0]['Interval'],
+                imageContent                = document.getElementById('ImageDigitalChannel'),
+                imageContent.style.display  = 'inline';
+                position                    = 0;
+            var  x                          = makeid(5);
+                 imageName = imagesList[position]['IMG'].split('/');
+                 imagePath = sourceImages+imageName[10];
+                 imageContent.src = imagePath+'?t='+x;
+            Debug('Image: '+imagePath+'?t='+x);
+            imageDLLInterval = setInterval(function () {
+                if (position === imagesListLength) {
+                    position = 0;
+                    imagesList          = getInfoFromServer('getDigitalImages');
+                    imagesListLength    = imagesList.length-1; 
+                    interval            = getInfoFromServer('getDigitalImageInterval');
+                    interval            = interval[0]['Interval'];
+                }else{
+             
+
+                    position = position+1;
+                }
+                x = makeid(5);
+                imageName = imagesList[position]['IMG'].split('/');
+                imagePath = sourceImages+imageName[10];
+                imageContent.src = imagePath+'?t='+x;
+                Debug('Image: '+imagePath+'?t='+x);
+            },interval*1000);
+            setTimeout(function(){
+                playAudio('kamai', audiosList, 0);
+            },1500); 
+        break;
+        case 'samsung':
+            var   imageContent                = document.getElementById('ImageDigitalChannel');
+                  imageContent.style.display  = 'inline';
+            // var imagesList                  = getInfoFromServer('getDigitalImages'),
+            //     imagesListLength            = imagesList.length-1; 
+            //     interval                    = getInfoFromServer('getDigitalImageInterval'),
+            //     interval                    = interval[0]['Interval'],
+            //     imageContent                = document.getElementById('ImageDigitalChannel'),
+            //     imageContent.style.display  = 'inline';
+            //     position                    = 0;
+            // var  x                          = makeid(5);
+            //      imageName = imagesList[position]['IMG'].split('/');
+            //      imagePath = sourceImages+imageName[10];
+            //      imageContent.src = imagePath+'?t='+x;
+            // Debug('Image: '+imagePath+'?t='+x);
+            // imageDLLInterval = setInterval(function () {
+            //     if (position === imagesListLength) {
+            //         position = 0;
+            //         imagesList          = getInfoFromServer('getDigitalImages');
+            //         imagesListLength    = imagesList.length-1; 
+            //         interval            = getInfoFromServer('getDigitalImageInterval');
+            //         interval            = interval[0]['Interval'];
+            //     }else{
+            
+            //         position = position+1;
+            //     }
+            //     x = makeid(5);
+            //     imageName = imagesList[position]['IMG'].split('/');
+            //     imagePath = sourceImages+imageName[10];
+            //     imageContent.src = imagePath+'?t='+x;
+            //     Debug('Image: '+imagePath+'?t='+x);
+            // },interval*1000);
+            changeImageFromDigitalChannel();
+            setTimeout(function(){
+                playAudio('samsung', audiosList, 0);
+            },1500);  
+        break;
+    }
+}
+function playAudio(device, audiosList, position){
+    var audioName           = audiosList[position]['AUDIO'].split('/');
+        audioName           = audioName[9];
+    var audioSource         = 'BBINCO/Admin/Views/Assets/DigitalAudio/',
+        serverAudioSource   = 'http://10.0.3.241/',
+        source              = serverAudioSource+audioSource+audioName;                 
+    switch (device) {
+        case 'amino':
+            // Guarda la estadistica
+                StopVideo();
+            // Reproduce el video
+                AVMedia.Play('src='+ source);
+                Debug('Audio: '+source);
+            // Maximiza el video en caso de que no este en pantalla completa
+                MaximizeTV();
+        break;
+        case 'explorador':
+            alert('ests en el explorador');
+        break;
+        case 'kamai':
+            ENTONE.video.cleanupAll();
+            Debug('Source= '+source);
+            // Variables kamai
+            var Video   = new ENTONE.video(1,0);
+                Video.setPltvBuffer(7200);
+                Video.open(source);
+                Video.play(1);
+                Video.setVideoCallback(HandleVideo);
+        break;
+        case 'samsung':
+            StopVideo();
+            try {
+                Player.open(source);
+                Debug('playvideo open: '+source); 
+                Player.prepareAsync(function() {
+                    Player.play();
+                });
+                MaximizeTV();
+            } catch (error) {
+                Debug('PlayVideo > Error name = '+ error.name + ', Error message = ' + error.message);
+            }
+        break;
+    }
+}
+function newDigitalChannel(){
+    $(function() {
+        PlayingChannel = true;
+        PlayDigita     = false;
+        var  videosList                      = getInfoFromServer('getDigitalVideos');                        
+        var  audiosList                      = getInfoFromServer('getDigitalAudios');
+        var  device                          = getDevice();
+        var  digitalMediaType                = getInfoFromServer('getDigitalMediaType'); 
+            if (digitalMediaType[0]['digitalMediaType'] === 'images') {
+                playImages(device, audiosList);
+                digitalMediaTypeToPlay = 'images';
+            }else if (digitalMediaType[0]['digitalMediaType'] === 'videos'){
+                playMultimedia(device, videosList, 0);
+                digitalMediaTypeToPlay = 'videos';
+            } 
+            ShowInfo();
+    });  
+}
+function cleanVideoImage(){
+    var imageContent                = document.getElementById('ImageDigitalChannel');
+        imageContent.src            = '';      
+        imageContent.style.display  = 'none';
+    var weatherContent               = document.getElementById('weatherChannel');
+        weatherContent.style.display = 'none';
+    Debug('Interval: '+imageDLLInterval);
+    if (imageDLLInterval != null) {
+        if (imageDLLInterval[0] != undefined) {
+            var aux = imageDLLInterval[0]['Interval'];
+            console.log(imageDLLInterval[0]);
+            clearInterval(aux);
+            imageDLLInterval = null;
+        }else {
+            clearInterval(imageDLLInterval);
+            imageDLLInterval = null;
+        }
+    }
+    console.log(playingWeatherChannel);
+    if (playingWeatherChannel != null) {
+        // clearInterval(playingWeatherChannel);
+        clearTimeout(playingWeatherChannel);
+        playingWeatherChannel = null;
+    }
+}
+/*-----------------------------------------------*/
+
+/*--------------Weather Channel------------------*/
+function playWeatherAudio(device, audiosList, position){
+    var audioName           = audiosList[position]['AUDIO'].split('/');
+        audioName           = audioName[9];
+    var audioSource         = 'BBINCO/Admin/Views/Assets/AudioWeatherChannel/',
+        serverAudioSource   = 'http://10.0.3.241/',
+        source              = serverAudioSource+audioSource+audioName;                 
+    switch (device) {
+        case 'amino':
+        // Guarda la estadistica
+            StopVideo();
+        // Reproduce el video
+            AVMedia.Play('src='+ source);
+            Debug('Audio: '+source);
+        // Maximiza el video en caso de que no este en pantalla completa
+            MaximizeTV();
+        break;
+        case 'explorador':
+            alert('ests en el explorador');
+        break;
+        case 'kamai':
+            ENTONE.video.cleanupAll();
+            Debug('Source= '+source);
+            // Variables kamai
+            var Video   = new ENTONE.video(1,0);
+                Video.setPltvBuffer(7200);
+                Video.open(source);
+                Video.play(1);
+                Video.setVideoCallback(HandleVideo);
+            break;
+    }
+}
+function refreshWeatherInfo(){
+        var actualMinute                        = actualDate.getMinutes();
+            actualDate                          = new Date();
+            weatherHourTitle.innerHTML          = formatAMPM(actualDate);
+            weatherInfo                         = getInfoFromServer('getWeatherForecast');
+            weatherTemperatureToday.innerHTML   = weatherInfo[0]['temp']+' C°';
+            weatherReport.innerHTML             = weatherInfo[0]['weather'];
+            rainInfo.innerHTML                  = weatherInfo[0]['precip']+' %';
+            wetInfo.innerHTML                   = weatherInfo[0]['dewpt']+' %';
+            weatherIconToday.src                = 'Media/WeatherChannel/'+getWeatherIcon(weatherInfo[0]['weatherCode']);
+            // console.log('refrescado: '+formatAMPM(actualDate));
+            Debug('refrescado: '+formatAMPM(actualDate));
+            playingWeatherChannel = setTimeout(function(){
+                refreshWeatherInfo();
+            }, 60000);
+
+}
+function weatherChannel(){
+    $(function() {
+        var  deviceAux                       = getDevice();
+        var  audiosList                      = getInfoFromServer('getWeatherAudio');
+             if (deviceAux == 'explorador') {
+                var video = document.getElementById("digitalVideoContent");
+                    video.pause();
+                    video.currentTime = 0;
+                    video.style.display = 'none';
+             }
+            digitalMediaTypeToPlay = null;
+            StopVideo();
+            // playWeatherAudio(deviceAux, audiosList,0);
+            weatherContent.style.display        = 'inline';
+            PlayingChannel                      = true;
+            PlayDigita                          = false;
+            refreshWeatherInfo();
+            ShowInfo();
+    }); 
+}
+function getWeatherIcon(code){
+    var weatherIconArray= [
+        {
+            "200": "heavyRain.png",
+            "201": "heavyRain.png",
+            "202": "heavyRain.png",
+            "230": "heavyRain.png",
+            "231": "heavyRain.png",	
+            "232": "heavyRain.png",	
+            "233": "heavyRain.png",	
+            "300": "heavyRain.png",	
+            "301": "heavyRain.png",	
+            "302": "heavyRain.png",	
+            "500": "heavyRain.png",	
+            "501": "heavyRain.png",	
+            "502": "heavyRain.png",	
+            "511": "heavyRain.png",	
+            "520": "heavyRain.png",	
+            "521": "heavyRain.png",	
+            "522": "heavyRain.png",	
+            "600": "heavyRain.png",	
+            "601": "heavyRain.png",	
+            "602": "heavyRain.png",	
+            "610": "heavyRain.png",	
+            "611": "ventoso.png",	
+            "612": "ventoso.png",	
+            "621": "heavyRain.png",	
+            "622": "heavyRain.png",	
+            "623": "heavyRain.png",	
+            "700": "cloudy.png",	
+            "711": "cloudy.png",	
+            "721": "cloudy.png",	
+            "731": "cloudy.png",	
+            "741": "cloudy.png",	
+            "751": "cloudy.png",	
+            "800": "sunny.png",	
+            "801": "sunny.png",	
+            "802": "nublado.png",	
+            "803": "nublado.png",	
+            "804": "superNublado.png",	
+            "900": "heavyRain.png",
+        }
+    ]
+    return weatherIconArray[0][code];
+}
+function fillWeatherIcons(){
+    var aux = actualDate.getDay();
+    for (var index = 0; index < forecastDaysTitleChildren.length; index++) {
+        if (aux >= days.length-1) {
+            aux = 0;
+        }else{
+            aux= aux+1;
+        }
+        forecastDaysTitleChildren[index].innerHTML  = days[aux].substring(0, 3);
+    var imgIcon                                     = forecastDaysIconChildren[index].querySelectorAll('img');
+        imgIcon[0].src                              = 'Media/WeatherChannel/'+getWeatherIcon(weatherInfo[index]['weatherCode']); 
+    var maxAndMinTemperature                        = forecastDaysTemperatureChildren[index].querySelectorAll('span');
+        maxAndMinTemperature[0].innerHTML           = weatherInfo[index]['max_temp']+' C°';
+        maxAndMinTemperature[1].innerHTML           = weatherInfo[index]['min_temp']+' C°';
+    var realFeelContainer                           = forecastDaysRealFeelChildren[index].querySelectorAll('div');
+    var realFeelSpan                                = realFeelContainer[1].querySelectorAll('span');
+        realFeelSpan[0].innerHTML                   = weatherInfo[index]['app_max_temp'];
+    }
+}
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+  }
+  
+/*-----------------------------------------------*/

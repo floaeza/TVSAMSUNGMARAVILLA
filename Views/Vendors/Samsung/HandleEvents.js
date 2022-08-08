@@ -1,30 +1,27 @@
-// $(document).ready(function() {
-// var videosListServer    = getInfoFromServer('getVideos'),
-//     videosListLenght    = (videosListServer.length)-1,
-//     multimediaPosition  = 0;
+var videosListServer    = getInfoFromServer('getVideos'),
+    videosListLenght    = (videosListServer.length)-1,
+    multimediaPosition  = 0;
 
-// var audiosListServer    = getInfoFromServer('getAudios'),
-//     audiosListLenght    = (audiosListServer.length)-1,
-//     audiosPosition      = 0;
+var audiosListServer    = getInfoFromServer('getAudios'),
+    audiosListLenght    = (audiosListServer.length)-1,
+    audiosPosition      = 0;
 
+/*------NEW DIGITAL CHANNEL---------------*/
+var videosDigitalListServer    = getInfoFromServer('getDigitalVideos'),
+    videosDigitalListLenght    = (videosDigitalListServer.length)-1,
+    multimediaDigitalPosition  = 0;
 
-// /*------NEW DIGITAL CHANNEL---------------*/
-// var videosDigitalListServer    = getInfoFromServer('getDigitalVideos'),
-//     videosDigitalListLenght    = (videosDigitalListServer.length)-1,
-//     multimediaDigitalPosition  = 0;
+var audiosDigitalListServer    = getInfoFromServer('getDigitalAudios'),
+    audiosDigitalListLenght    = (audiosDigitalListServer.length)-1,
+    audiosDigitalPosition      = 0;
+/*----------------------------------------*/
 
+/*------WEATHER CHANNEL---------------*/
+var audiosWeatherListServer    = getInfoFromServer('getWeatherAudio'),
+    audiosWeatherListLenght    = (audiosWeatherListServer.length)-1,
+    audiosWeatherPosition      = 0;
+/*----------------------------------------*/   
 
-// var audiosDigitalListServer    = getInfoFromServer('getDigitalAudios'),
-//     audiosDigitalListLenght    = (audiosDigitalListServer.length)-1,
-//     audiosDigitalPosition      = 0;
-// /*----------------------------------------*/
-
-// /*------WEATHER CHANNEL---------------*/
-// var audiosWeatherListServer    = getInfoFromServer('getWeatherAudio'),
-//     audiosWeatherListLenght    = (audiosWeatherListServer.length)-1,
-//     audiosWeatherPosition      = 0;
-// /*----------------------------------------*/   
-// });
 
 var listener = {
     onbufferingstart: function() {
@@ -42,15 +39,14 @@ var listener = {
     onstreamcompleted: function() {
         Debug('Stream Completed > end');
         EventString = 'CONNECTION_STOPPED';
-
         if(CurrentModule === 'Tv'){
             //SetDigitalChannel();
-            if (digitalMediaTypeToPlay != null) {
+            if (digitalMediaTypeToPlay != null) {                
                 if (digitalMediaTypeToPlay === 'videos') {
-                    if (multimediaDigitalPosition === videosDigitalListLenght) {
+                    videosDigitalListServer    = getInfoFromServer('getDigitalVideos');
+                    videosDigitalListLenght    = (videosDigitalListServer.length)-1;
+                    if (multimediaDigitalPosition === videosDigitalListLenght ||  multimediaDigitalPosition > videosDigitalListLenght) {
                         multimediaDigitalPosition  = 0;
-                        videosDigitalListServer    = getInfoFromServer('getDigitalVideos');
-                        videosDigitalListLenght    = (videosDigitalListServer.length)-1;
                     }else{
                         multimediaDigitalPosition = multimediaDigitalPosition+1;
                     }
@@ -58,10 +54,10 @@ var listener = {
                     Debug('mediaType: '+mediaTypeToPlay);
                     playMultimedia('samsung', videosDigitalListServer, multimediaDigitalPosition);
                 }else if(digitalMediaTypeToPlay === 'images'){
-                    if (audiosDigitalPosition === audiosDigitalListLenght) {
+                    audiosDigitalListServer    = getInfoFromServer('getDigitalAudios');
+                    audiosDigitalListLenght    = (audiosDigitalListServer.length)-1;
+                    if (audiosDigitalPosition === audiosDigitalListLenght || audiosDigitalPosition > audiosDigitalListLenght){
                         audiosDigitalPosition  = 0;
-                        audiosDigitalListServer    = getInfoFromServer('getDigitalAudios');
-                        audiosDigitalListLenght    = (audiosDigitalListServer.length)-1;
                     }else{
                         audiosDigitalPosition = audiosDigitalPosition+1;
                     }
@@ -100,4 +96,3 @@ var listener = {
         Debug('event type: ' + eventType + ', data: ' + eventData);
     }
 };
-

@@ -21,9 +21,8 @@ var WindowMaxWidth  = 0,
 
 var Checker = null;
 
-    // Player.setListener(listener);
-
-    //Debug('PLAYER WEBAPIS.AVPLAY >>s LISTENER');
+Player.setListener(listener);
+//Debug('PLAYER WEBAPIS.AVPLAY >>s LISTENER');
 
 GetWindowFullSize();
 GetWindowMinSize();
