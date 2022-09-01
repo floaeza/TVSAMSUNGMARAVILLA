@@ -238,7 +238,6 @@
  * Obtiene informacion del dispositivo
  ******************************************************************************/
     function GetInfoDevice(){
-        alert("MENU");
         $.ajax({
             type: 'POST',
             url: '[@Index]',
