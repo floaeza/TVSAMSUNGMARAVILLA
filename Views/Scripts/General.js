@@ -40,7 +40,7 @@
         imageDLLInterval        = null,
         playingWeatherChannel   = null;
     var sourceController    = '/BBINCO/Admin/Core/Querys/',
-        sourceTvController  = '/BBINCO/TV7/Core/Controllers/',
+        sourceTvController  = '/BBINCO/TV_VPL/Core/Controllers/',
         sourceImages        = '/BBINCO/Admin/Views/Assets/img/channelImages/';
 
         window.localStorage;
