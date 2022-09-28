@@ -1,5 +1,5 @@
 var sourceController    = '/BBINCO/Admin/Core/Querys/',
-    sourceTvController  = '/BBINCO/TV_VPL/Core/Controllers/',
+    sourceTvController  = '/BBINCO/AMANVARI_TEST/Core/Controllers/',
     sourceImages        = '/BBINCO/Admin/Views/Assets/img/serverImages/';
 $(function() {
     var videosList              = getInfoFromServer('getVideos'),
@@ -185,7 +185,7 @@ function playMultimedia(device, videosList, position) {
                 videoName           = videosList[position]['VIDEO'].split('/');
                 videoName           = videoName[9];
                 videoSource         = '/BBINCO/Admin/Views/Assets/Videos/';
-                serverVideoSource   = 'http://10.0.3.241';
+                serverVideoSource   = 'http://201.116.203.114';
                 source              = serverVideoSource+videoSource+videoName;
                 videoContent.src    = source;
                 $("#videoContent").on('ended', function(){
@@ -234,7 +234,7 @@ function playAudio(device, audiosList, position){
     var audioName           = audiosList[position]['AUDIO'].split('/');
         audioName           = audioName[9];
     var audioSource         = 'BBINCO/Admin/Views/Assets/Audio/',
-        serverAudioSource   = 'http://10.0.3.241/',
+        serverAudioSource   = 'http://201.116.203.114/',
         source              = serverAudioSource+audioSource+audioName;                 
     switch (device) {
         case 'amino':

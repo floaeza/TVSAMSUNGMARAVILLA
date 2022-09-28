@@ -77,6 +77,30 @@ var listener = {
                 // Debug('mediaType: '+digitalMediaTypeToPlay);
                 playWeatherAudio('samsung', audiosWeatherListServer, audiosWeatherPosition);
             }
+        }else if (CurrentModule === 'Multimedia') {
+            if (mediaTypeToPlay === 'videos') {
+                videosListServer    = getInfoFromServer('getVideos');
+                videosListLenght    = (videosListServer.length)-1;
+                if (multimediaPosition === videosListLenght || multimediaPosition > videosListLenght) {
+                    multimediaPosition  = 0;
+                }else{
+                    multimediaPosition = multimediaPosition+1;
+                }
+                Debug('Position= '+multimediaPosition);
+                Debug('mediaType: '+mediaTypeToPlay);
+                playMultimedia('samsung', videosListServer, multimediaPosition);
+            }else if(mediaTypeToPlay === 'images'){
+                audiosListServer    = getInfoFromServer('getAudios');
+                audiosListLenght    = (audiosListServer.length)-1;
+                if (audiosPosition === audiosListLenght || audiosPosition > audiosListLenght) {
+                    audiosPosition  = 0;
+                }else{
+                    audiosPosition = audiosPosition+1;
+                }
+                Debug('Position= '+audiosPosition);
+                Debug('mediaType: '+mediaTypeToPlay);
+                playAudio('samsung', audiosListServer, audiosPosition);
+            }
         }
         if(typeof(LoopVideo) !== 'undefined'){
             if(LoopVideo === true){
