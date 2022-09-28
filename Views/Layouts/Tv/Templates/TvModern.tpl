@@ -40,9 +40,9 @@
                     <span id="weatherReport">SUNNY</span>
                 </div>
                 <div class="weatherReportTodayExtraInfo">
-                    <img src="http://10.0.3.241/BBINCO/TVS/Media/WeatherChannel/heavyRain.png" alt="" class="rainIcon">
+                    <img src="http://172.22.22.10/BBINCO/TVS/Media/WeatherChannel/heavyRain.png" alt="" class="rainIcon">
                     <span id="rainInfo" class="rainInfo">5%</span>
-                    <img class="wetIcon" src="http://10.0.3.241/BBINCO/TVS/Media/WeatherChannel/wet.png" alt="">
+                    <img class="wetIcon" src="http://172.22.22.10/BBINCO/TVS/Media/WeatherChannel/wet.png" alt="">
                     <span id="wetInfo" class="wetInfo">15%</span>
                 </div>
             </div>
