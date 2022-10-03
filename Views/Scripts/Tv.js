@@ -168,7 +168,7 @@ function SetEpgFile(){
             // } else {
                 SourceEpgFile = Libraries['EpgDaysPath'] + 'epg_' + CurrentDate + '_' + Device['Services']['PackageId'] + '.json';
             // }
-        //////Debug('------- SetEpgFile ->>> SourceEpgFile: ' + SourceEpgFile);
+        Debug('------- SetEpgFile ->>> SourceEpgFile: ' + SourceEpgFile);
         GetJsonEpg(SourceEpgFile, 0);
     } else {
         EpgDataActive = false;
