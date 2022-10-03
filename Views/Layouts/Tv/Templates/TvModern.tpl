@@ -9,7 +9,7 @@
 </video>
 <!------------------------------------------->
 <!-------------- WEATHER CHANNEL ------------>
-<div id= "weatherChannel" class="weatherContainer">
+<div id= "weatherChannel" class="weatherContainer" style="display: none;">
     <div class="weatherTodayContainer">
         <div class="InfoContainer">
             <div class="weatherHeadContainerLeft">
