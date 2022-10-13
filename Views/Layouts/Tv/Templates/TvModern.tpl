@@ -13,16 +13,19 @@
     <div class="weatherTodayContainer">
         <div class="InfoContainer">
             <div class="weatherHeadContainerLeft">
-                <div class="weatherTitle">
+                <!-- <div class="weatherTitle">
                     <span>Loreto, B.C.S., México</span>
+                </div> -->
+                <div class="logoContainer">
+                    <img id="logoWeatherChannel" src="Media/Logos/VPL/LogoWhite.png" alt="">
                 </div>
             </div>         
             <div class="weatherHeadContainerRight">
-                <div class="weatherDate">
+                <!-- <div class="weatherDate">
                     <span id="weatherDateTitle">Tuesday February 28</span>
-                </div>
+                </div> -->
             </div>
-            <div class="weatherHour">
+            <div class="weatherHour" style="display: none;">
                 <span id="weatherHourTitle">09:52 a.m</span>
             </div>
         </div>
@@ -30,19 +33,21 @@
             <div class="weatherTemperatureLeft">
                 <div class="weatherIcon">
                     <img id ="weatherIconToday" src="Media/WeatherChannel/sunny.png" alt="">
+                    <div class="weatherReportTodayInfo">
+                        <span>Today:</span>
+                        <span id="weatherReport">SUNNY</span>
+                    </div>
                 </div>
                 <div class="weatherTemperature">
                     <span id="weatherTemperatureToday">78°C</span>
                 </div>
             </div>         
             <div class="weatherReportRight">
-                <div class="weatherReportTodayInfo">
-                    <span id="weatherReport">SUNNY</span>
-                </div>
+
                 <div class="weatherReportTodayExtraInfo">
-                    <img src="http://172.22.22.10/BBINCO/TVS/Media/WeatherChannel/heavyRain.png" alt="" class="rainIcon">
+                    <img src="Media/WeatherChannel/heavyRain.png" alt="" class="rainIcon">
                     <span id="rainInfo" class="rainInfo">5%</span>
-                    <img class="wetIcon" src="http://172.22.22.10/BBINCO/TVS/Media/WeatherChannel/wet.png" alt="">
+                    <img class="wetIcon" src="Media/WeatherChannel/wet.png" alt="">
                     <span id="wetInfo" class="wetInfo">15%</span>
                 </div>
             </div>
@@ -125,7 +130,7 @@
                 </div>
             </div>
         </div>
-        <div id="forecastDaysRealFeel" class="nextDayInfoContainer" style="background-color: #31804a;">
+        <div id="forecastDaysRealFeel" class="nextDayInfoContainer" style="background-color: rgba(0,0,0,0.1);">
             <div class="realFeelInfo">
                 <div>
                     <span>Real Feel</span>
@@ -168,11 +173,16 @@
             </div>
         </div>
     </div>
-    <div class="logoWeatherChannel">
+    <div class="dateBar">
+        <div class="weatherDate">
+            <span id="weatherDateTitle">Tuesday February 28</span>
+        </div>
+    </div>
+    <!-- <div class="logoWeatherChannel">
         <div class="logoContainer">
             <img id="logoWeatherChannel" src="Media/Logos/VPL/LogoWhite.png" alt="">
         </div>
-    </div>
+    </div> -->
 </div>
 <!------------------------------------------->
 <!--<iframe id='ContentFrame' src=''></iframe>-->
