@@ -982,7 +982,14 @@ function PlayChannelEpg(){
     } else {
         ////Debug('GetDigitalChannel EPG');
         //if(typeof(gSTB) !== 'undefined'){
-        SetDigitalChannel();
+        // SetDigitalChannel();
+        Debug('GetDigitalChannel');
+        cleanVideoImage();
+        if (ChannelsJson[ChannelPosition].INDC === 'Promo'){
+            newDigitalChannel();
+        }else if (ChannelsJson[ChannelPosition].INDC === 'Clima'){
+            weatherChannel();
+        }
     }  
 }
     
