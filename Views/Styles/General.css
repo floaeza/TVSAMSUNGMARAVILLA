@@ -328,6 +328,7 @@ div#DigitalChannel {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  border: 3px solid;
 }
 
 .dateBar{
