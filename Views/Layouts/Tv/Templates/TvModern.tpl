@@ -10,7 +10,7 @@
 <!------------------------------------------->
 <!-------------- WEATHER CHANNEL ------------>
 <div id= "weatherChannel" class="weatherContainer" style="display: none;">
-    <div class="weatherTodayContainer">
+    <div class="weatherNextDaysContainer" style="background-color: rgba(0,0,0,0);">
         <div class="InfoContainer">
             <div class="weatherHeadContainerLeft">
                 <!-- <div class="weatherTitle">
@@ -27,29 +27,6 @@
             </div>
             <div class="weatherHour" style="display: none;">
                 <span id="weatherHourTitle">09:52 a.m</span>
-            </div>
-        </div>
-        <div class="InfoContainer">
-            <div class="weatherTemperatureLeft">
-                <div class="weatherIcon">
-                    <img id ="weatherIconToday" src="Media/WeatherChannel/sunny.png" alt="">
-                    <div class="weatherReportTodayInfo">
-                        <span>Today:</span>
-                        <span id="weatherReport">SUNNY</span>
-                    </div>
-                </div>
-                <div class="weatherTemperature">
-                    <span id="weatherTemperatureToday">78°C</span>
-                </div>
-            </div>         
-            <div class="weatherReportRight">
-
-                <div class="weatherReportTodayExtraInfo">
-                    <img src="Media/WeatherChannel/heavyRain.png" alt="" class="rainIcon">
-                    <span id="rainInfo" class="rainInfo">5%</span>
-                    <img class="wetIcon" src="Media/WeatherChannel/wet.png" alt="">
-                    <span id="wetInfo" class="wetInfo">15%</span>
-                </div>
             </div>
         </div>
     </div>
@@ -173,16 +150,48 @@
             </div>
         </div>
     </div>
+    <div class="weatherTodayContainer" style="background-color: rgba(0,0,0,0);">
+
+    </div>
+    <div class="weatherTodayContainer">
+        <div class="weatherContainerToday">
+            <div class="weatherIconToday">
+                <img id ="weatherIconToday" src="Media/WeatherChannel/sunny.png" alt="">
+            </div>
+            <div class="weatherInfoToday">
+                <div class="weatherInfoTemperature">
+                    <span id="weatherTemperatureToday">78 °C</span>
+                </div>
+                <span>Today:</span>
+                <span id="weatherReport">SUNNY</span>
+            </div>
+            <div class="extraInfoContainer">
+                <div class="rainInfoContainer">
+
+                </div>
+                <div class="wetInfoContainer">
+                </div>
+                <div class="weatherExtraInfoToday">
+                    <div class="rainInfoToday">
+                        <span id="rainInfo">5%</span>
+                    </div>
+                    <div class="wetInfoToday">
+                        <span id="wetInfo">15%</span>
+                    </div>
+                </div>
+                <!-- <img src="Media/WeatherChannel/heavyRain.png"> -->
+                <!-- <span id="rainInfo">5%</span> -->
+
+                <!-- <img class="wetIcon" src="Media/WeatherChannel/wet.png"> -->
+                <!-- <span id="wetInfo">15%</span> -->
+            </div>
+        </div>
+    </div>
     <div class="dateBar">
         <div class="weatherDate">
             <span id="weatherDateTitle">Tuesday February 28</span>
         </div>
     </div>
-    <!-- <div class="logoWeatherChannel">
-        <div class="logoContainer">
-            <img id="logoWeatherChannel" src="Media/Logos/VPL/LogoWhite.png" alt="">
-        </div>
-    </div> -->
 </div>
 <!------------------------------------------->
 <!--<iframe id='ContentFrame' src=''></iframe>-->

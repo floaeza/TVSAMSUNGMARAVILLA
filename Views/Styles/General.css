@@ -320,248 +320,326 @@ div#DigitalChannel {
 }
 /********************* Weather Channel *****************************/
 .weatherContainer{
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-image: url('/BBINCO/Admin/Views/Assets/img/WeatherBackground.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url('/BBINCO/Admin/Views/Assets/img/WeatherBackground.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .dateBar{
-  background-color: rgba(0, 0, 0, 0.6);
-  position: relative;
-  width: 100%;
-  height: 50%;
-  top: 35%;
-  float: left;
+background-color: rgba(0, 0, 0, 0.6);
+position: relative;
+width: 100%;
+height: 50%;
+top: 15%;
+float: left;
 }
 
 .weatherTodayContainer{
-    background-color: rgba(0,0,0,0.4);
-    position: relative;
-    width: 50%;
-    height: 50%;
-    float: left;
+  background-color: rgba(0,0,0,0.6);
+  position: relative;
+  width: 50%;
+  height: 20%;
+  float: left;
 }
-
+.weatherContainerToday{
+width: 100%;
+height: 100%;
+position: fixed;
+}
+.weatherIconToday{
+height: 20%;
+width: 10%;
+float: left;
+}
+.weatherInfoToday{
+color: white;
+font-size: 20px;
+font-weight: bold;
+text-shadow: 2px 2px black;
+text-align: center;
+left: 60%;
+position: fixed;
+}
+.weatherInfoTemperature{
+font-size: 40px;
+}
+#weatherIconToday{
+width: 100%;
+height: 100%;
+}
 .InfoContainer {
-    position: relative;
-    width: 100%;
-    height: 50%;
+  position: relative;
+  width: 100%;
+  height: 50%;
 }
 
 .weatherNextDaysContainer{
-    background-color: rgba(0,0,0,0.6);
-    position: relative;
-    width: 50%;
-    height: 50%;
-    float: left;
+  background-color: rgba(0,0,0,0.6);
+  position: relative;
+  width: 50%;
+  height: 50%;
+  float: left;
 }
 
 .weatherTitleContainer{
-    position: relative;
-    width: 100%;
-    height: 50%;
+  position: relative;
+  width: 100%;
+  height: 50%;
 }
 .weatherTitle{
-    padding: 2%;
-    font-weight: bold;
-    font-size: 40px;
-    color: white;
-    text-shadow: 2px 2px #000000
+  padding: 2%;
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  text-shadow: 2px 2px #000000
 }
 
 .weatherHeadContainerLeft {
-    float: left;
-    height: 100%;
-    width: 70%;
-    right: 0%;
-  }
-  .weatherTitle{
-    max-height: 50%;
-    width: 100%; 
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 35px;
-    text-shadow: 2px 2px #000000;
-    position: relative;
-  }
-  .weatherHeadContainerRight {
-    width: 30%;
-    height: 100%;
-    float: right;
-    right: 0%;
-  }
-  .weatherDate{
-    max-height: 50%;
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px; 
-    text-shadow: 2px 2px #000000;
-    position: relative;
-    top: 10%;
-  }
+  float: left;
+  height: 100%;
+  width: 70%;
+  right: 0%;
+}
+.weatherTitle{
+  max-height: 50%;
+  width: 100%; 
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  text-shadow: 2px 2px #000000;
+  position: relative;
+}
+.weatherHeadContainerRight {
+  width: 30%;
+  height: 100%;
+  float: right;
+  right: 0%;
+}
+.weatherDate{
+  max-height: 50%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px; 
+  text-shadow: 2px 2px #000000;
+  position: relative;
+  top: 10%;
+}
 
-  .weatherTemperature{
-    width: 35%;
-    height: 85%;
-    position: absolute;
-    left: 25%;
-    color: white;
-    font-size: 65px;
-    text-shadow: 2px 2px #000000;
-    top: 20%;
-    font-weight: bold;
-  }
-  .weatherTemperatureLeft{
-    float: left;
-    height: 100%;
-    width: 70%;
-    right: 0%;
-  }
-  .weatherIcon{
-    width: 30%;
-    height: 65%;
-    padding: 5%;
-  }
-  .weatherIcon img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .weatherReportRight{
-    width: 44%;
-    height: 100%;
-    position: absolute;
-    left: 56%;
-    right: 0%;
-  }
-  .weatherReportTodayInfo{
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    text-shadow: 2px 2px #000000;
-    text-align: center;
-    position: fixed;
-    left: 11%;
-    top: 42%;
-  }
-  .weatherReportTodayExtraInfo{
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
-    text-shadow: 2px 2px #000000;
-    position: fixed;
-  }
+.weatherTemperature{
+  width: 35%;
+  height: 85%;
+  position: absolute;
+  left: 25%;
+  color: white;
+  font-size: 65px;
+  text-shadow: 2px 2px #000000;
+  top: 20%;
+  font-weight: bold;
+}
+.weatherTemperatureLeft{
+  float: left;
+  height: 100%;
+  width: 70%;
+  right: 0%;
+}
+.weatherIcon{
+  width: 30%;
+  height: 65%;
+  padding: 5%;
+}
+.weatherIcon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.weatherReportRight{
+  width: 44%;
+  height: 100%;
+  position: absolute;
+  left: 56%;
+  right: 0%;
+}
+.weatherReportTodayInfo{
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 2px 2px #000000;
+  text-align: center;
+  position: fixed;
+  left: 11%;
+  top: 42%;
+}
+.weatherReportTodayExtraInfo{
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-shadow: 2px 2px #000000;
+  position: fixed;
+}
 
-  .rainIcon{
-    width: 36%;
-    height: 36%;
-    position: relative;
-  }
+.rainIcon{
+  width: 25%;
+  height: 36%;
+  position: relative;
+}
 
-  .rainInfo{
-    position: fixed;
-    top: 27%;
-  }
-  .wetIcon{
-    width: 4%;
-    position: fixed;
-    left: 40%;
-  }
-  .wetInfo{
-    position: fixed;
-    left: 44%;
-    top: 27%;
-  }
-  .nextDayInfoContainer{
-    width: 100%;
-    height: 25%;
-    display: block;
-  }
+.rainInfo{
+  position: fixed;
+  top: 27%;
+}
+.wetIcon{
+  width: 4%;
+  position: fixed;
+  left: 40%;
+}
+.wetInfo{
+  position: fixed;
+  left: 44%;
+  top: 27%;
+}
+.nextDayInfoContainer{
+  width: 100%;
+  height: 25%;
+  display: block;
+}
 
-  .dayTitle{
-    width: 19%;
-    height: 100%;
-    display: inline-block;
-    /* background-color: #0be116; */
-    text-align: center;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    text-shadow: 2px 2px #000000;
-    margin-top: 6%;
-  }
-  .dayIcon{
-    width: 19%;
-    height: 100%;
-    display: inline-block;
-    /* background-color: #0b24e1; */
-  }
-  .dayIcon img{
-    width: 50%;
-    height: 70%;
-    margin-left: 25%;
-  }
-  .dayMaxMin{
-    width: 19%;
-    height: 100%;
-    display: inline-block;
-    /* background-color: #0be116; */
-    text-align: center;
-    color: white;
-    font-size: 25px;
-    text-shadow: 2px 2px #000000;
-  }
-  .realFeelInfo{
-    width: 19%;
-    height: 100%;
-    display: inline-block;
-    /* background-color: #0be116; */
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    text-shadow: 2px 2px #000000;
-  }
-  .logoWeatherChannel{
-    width: 30%;
-    height: 30%;
-    position: relative;
-    top: 60%;
-    left: 7%;
-  }
-  .logoContainer{
-    position: absolute;
-    height: 60%;
-    width: 60%;
-    top: 17%;
-    left: 10%;
-  }
-  .logoContainer img{
-    width: 100%;
-    height: 100%;
-  }
-  .weatherHour{
-    position: absolute;
-    top: 75%;
-    left: 10%;
-    font-weight: bold;
-    font-size: 35px;
-    color: white;
-    text-shadow: 2px 2px #000000;
-  }
+.dayTitle{
+  width: 19%;
+  height: 100%;
+  display: inline-block;
+  /* background-color: #0be116; */
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 2px 2px #000000;
+  margin-top: 6%;
+}
+.dayIcon{
+  width: 19%;
+  height: 100%;
+  display: inline-block;
+  /* background-color: #0b24e1; */
+}
+.dayIcon img{
+  width: 50%;
+  height: 70%;
+  margin-left: 25%;
+}
+.dayMaxMin{
+  width: 19%;
+  height: 100%;
+  display: inline-block;
+  /* background-color: #0be116; */
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  text-shadow: 2px 2px #000000;
+}
+.realFeelInfo{
+  width: 19%;
+  height: 100%;
+  display: inline-block;
+  /* background-color: #0be116; */
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-shadow: 2px 2px #000000;
+}
+.logoWeatherChannel{
+  width: 30%;
+  height: 30%;
+  position: relative;
+  top: 60%;
+  left: 7%;
+}
+.logoContainer{
+  position: absolute;
+  height: 60%;
+  width: 60%;
+  top: 17%;
+  left: 10%;
+}
+.logoContainer img{
+  width: 100%;
+  height: 100%;
+}
+.weatherHour{
+  position: absolute;
+  top: 75%;
+  left: 10%;
+  font-weight: bold;
+  font-size: 35px;
+  color: white;
+  text-shadow: 2px 2px #000000;
+}
 
-  #ImageDigitalChannel{
-    position: absolute;
-  }
-  #imageMultimedia{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
+#ImageDigitalChannel{
+  position: absolute;
+}
+#imageMultimedia{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.extraInfoContainer{
+  width: 30%;
+  height: 20%;
+  position: fixed;
+  left: 78%;
+}
+.rainInfoContainer{
+  position: absolute;
+  float: left;
+  width: 50%;
+  height: 65%;
+  background-image: url('/BBINCO/TV_VPL/Media/WeatherChannel/heavyRain.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.wetInfoContainer{
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  background-image: url('/BBINCO/TV_VPL/Media/WeatherChannel/wet.png');
+  left: 30%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.weatherExtraInfoToday{
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+}
+.rainInfoToday{
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  top: 20%;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-shadow: 2px 2px black;
+  text-align: center;
+}
+.wetInfoToday{
+  width: 45%;
+  height: 100%;
+  position: absolute;
+  left: 20%;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-shadow: 2px 2px black;
+  text-align: center;
+  top: 20%;
+}
