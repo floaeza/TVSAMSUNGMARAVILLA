@@ -11,7 +11,7 @@ class Utilities {
     /* Obtiene los datos de un URL */
 
     //Ejemplo:
-    //$url = "http://192.168.0.121:8080";
+    //$url = "http://10.0.3.14:8080";
     //$returned_content = get_data($url);
 
     private $DataFromUrl;
