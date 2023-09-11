@@ -4349,8 +4349,8 @@ FW3hczdA5w==</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>0FVpYTK59VJDGYc6AUjL0rwN3h9jmd3tqcxxu/7bL/KGrSE40dPyvQ8a2Qp9Dgfc5bASLEvfgI/8
-pSVB9xG2fg==</DigestValue>
+<DigestValue>yTcQQ6OX8ikF2Tx66HjI5ZNKYmz/jHZhp+0c8HkBap/DQBXpCwa0EfaFV8zyQjEyBZYOd6hXYg8e
+R5tsDXkySQ==</DigestValue>
 </Reference>
 <Reference URI="content.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -4432,9 +4432,9 @@ QY10fG1EWQ==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-SxxCdrqq2fbO8uLvvHvgxeQVMgpvH0YmedzkczRxZg0BMB0CSoslm7ZpFv7KBKvWyGyb0D0W0v0k
-uaZwy/aZ5R39bO3aNq8+XaldJUt8yJU8xeDnAmlIR9s2pIo8/WEsYsdGgOB9jJcll+mGDeIT6EJf
-skZo6yQkWazGzvVMRv0=
+Ba9wiPFN5Okz3M5FGNaUQg1A2bxCW7U1+lxbEvL15+/7rXh5FXagryt15N/eucRs+F/A2WRQ8f8r
+DwCigjrYKJSJuO9vxyeGkBukuyN1eZxbrBpHgo7ap9fj4AP50s3cAh2QO3pt6S76gxzBorb8ZvCJ
+FIeEIcCmKkk/tp0vXrc=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
