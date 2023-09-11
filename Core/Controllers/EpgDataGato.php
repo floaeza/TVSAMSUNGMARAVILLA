@@ -46,7 +46,7 @@ $RemoveFirst = true;
 
 /* PONER MANUALMENTE LA IP, YA QUE AL EJECUTAR PHP DESDE LA TERMINAL NO OBTIENE LA IP */
 //$ServerIp = 'localhost';
-$ServerIp = '10.0.3.14';
+$ServerIp = '192.168.0.121';
 
 $EpgFolder = 'http://'.$ServerIp.'/EpgChannels/';
 

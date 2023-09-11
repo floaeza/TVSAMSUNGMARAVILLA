@@ -156,13 +156,13 @@
     var Box1   = document.getElementById('Box1'),
         Box2   = document.getElementById('Box2');
 
-    var Videosrc = 'http://10.0.3.14/Demos/Media/Claseazul9OCT_ing.mp4';
+    var Videosrc = 'http://192.168.0.121/Demos/Media/Claseazul9OCT_ing.mp4';
 
     var imgArray = [
-            'http://10.0.3.14/Demos/Media/1.png',
-            'http://10.0.3.14/Demos/Media/2.jpg',
-            'http://10.0.3.14/Demos/Media/3.png',
-            'http://10.0.3.14/Demos/Media/4.jpg'
+            'http://192.168.0.121/Demos/Media/1.png',
+            'http://192.168.0.121/Demos/Media/2.jpg',
+            'http://192.168.0.121/Demos/Media/3.png',
+            'http://192.168.0.121/Demos/Media/4.jpg'
         ],
         curIndex = 0;
     imgDuration = 5000;
@@ -181,10 +181,10 @@
 
 
     var imgArray2 = [
-            'http://10.0.3.14/Demos/Media/dining.png',
-            'http://10.0.3.14/Demos/Media/dining1.jpg',
-            'http://10.0.3.14/Demos/Media/activi.png',
-            'http://10.0.3.14/Demos/Media/activi1.jpg'
+            'http://192.168.0.121/Demos/Media/dining.png',
+            'http://192.168.0.121/Demos/Media/dining1.jpg',
+            'http://192.168.0.121/Demos/Media/activi.png',
+            'http://192.168.0.121/Demos/Media/activi1.jpg'
         ],
         curIndex2 = 0;
     imgDuration2 = 6000;
