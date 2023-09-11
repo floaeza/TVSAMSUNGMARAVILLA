@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://192.168.0.121/BBINCO/TVSMARAVILLA/" version="1.0.0" height="1080" width="1920" viewmodes="fullscreen">
     <tizen:application id="87yCAs7xPK.bbinco" package="87yCAs7xPK" required_version="2.3"/>
+    <access origin="*" subdomains="true"/>
     <content src="index.html"/>
     <feature name="http://www.samsungdforum.com/feature/Keyboard"/>
     <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
