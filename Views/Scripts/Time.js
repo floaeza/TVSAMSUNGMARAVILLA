@@ -53,8 +53,10 @@
     function SetDate(){
         TimeRunning++;
         
-        FormatDateAndHour = moment().subtract(Offset, 'hours').format('MMM, DD / h:mm A');
-        CurrentStbDate = moment().subtract(Offset, 'hours').format('Y-MM-DD h:mm:ss');
+        // FormatDateAndHour = moment().subtract(Offset, 'hours').format('MMM, DD / h:mm A');
+        // CurrentStbDate = moment().subtract(Offset, 'hours').format('Y-MM-DD h:mm:ss');
+        FormatDateAndHour = obtenerHoraFormateada('MMM, DD / h:mm A', offsetMegaGeneralSinTania);
+        CurrentStbDate = obtenerHoraFormateada('Y-MM-DD h:mm:ss', offsetMegaGeneralSinTania);
 
         if(!Device){
             if (Device.Client === 'CHL') {
@@ -63,7 +65,8 @@
                 FormatHour = moment().subtract(Offset, 'hours').format('MMMM Do h:mm a');
             }
         } else {
-            FormatHour = moment().subtract(Offset, 'hours').format('h:mm A');
+            // FormatHour = moment().subtract(Offset, 'hours').format('h:mm A');
+            FormatHour = obtenerHoraFormateada('h:mm A', offsetMegaGeneralSinTania);
         }
 
         if(CurrentModule === 'Tv'){
@@ -95,7 +98,8 @@
 
         } else if(CurrentModule === 'Menu' || CurrentModule === 'Movies'){
             FormatDate = moment().subtract(Offset, 'hours').format('MMMM DD YYYY');
-            FormatHour = moment().subtract(Offset, 'hours').format('h:mm a');
+            // FormatHour = moment().subtract(Offset, 'hours').format('h:mm a');
+            FormatHour = obtenerHoraFormateada('h:mm A', offsetMegaGeneralSinTania);
             
             if(FormatHour === '4:02 am'  && typeof(ASTB) !== 'undefined'){
                 ASTB.Reboot();

@@ -13,6 +13,7 @@
         SM_EndDateModuleMM     = '',
         SM_MinSeconds          = 10000, // 30 segundos
         SM_DifferenceInSec     = '';
+    var offsetMegaGeneralSinTania = -1;
         
     var FormatStartDate     = '',
         EndDateModule       = '',
@@ -1159,4 +1160,58 @@ function formatAMPM(date) {
     return strTime;
   }
   
+function obtenerHoraFormateada(formato, offsetHoras) {
+    // Crear una nueva instancia de Date para la fecha y hora actual
+    var fechaActual = new Date();
+
+    // Aplicar el offset en horas (si se proporciona)
+    if (offsetHoras) {
+        fechaActual.setHours(fechaActual.getHours() + offsetHoras);
+    }
+
+    // Obtener los componentes de la hora actual
+    var hora = String(fechaActual.getHours());
+    var minutos = String(fechaActual.getMinutes());
+    var amPm = hora < 12 ? 'AM' : 'PM';
+    hora = (hora % 12) || 12; // Convertir a formato de 12 horas
+
+    // Formatear la hora actual según el formato especificado
+    switch (formato) {
+        case 'h:mm A':
+        // h:mm A - Ejemplo: 3:30 PM
+        hora = hora.length < 2 ? '0' + hora : hora;
+        minutos = minutos.length < 2 ? '0' + minutos : minutos;
+        return hora + ':' + minutos + ' ' + amPm;
+        case 'MMMM Do h:mm a':
+        // MMMM Do h:mm a - Ejemplo: abril 10th 3:30 pm
+        var dia = fechaActual.getDate();
+        var mes = fechaActual.toLocaleString('default', { month: 'long' });
+        return mes + ' ' + dia + getOrdinalSuffix(dia) + ' ' + hora + ':' + minutos + ' ' + amPm;
+        case 'h:mm A':
+        // h:mm A - Ejemplo: 3:30 PM
+        hora = hora.length < 2 ? '0' + hora : hora;
+        minutos = minutos.length < 2 ? '0' + minutos : minutos;
+        return hora + ':' + minutos + ' ' + amPm;
+        default:
+        return '';
+    }
+}
+  
+// Función auxiliar para obtener el sufijo ordinal para el día
+function getOrdinalSuffix(dia) {
+    if (dia === 11 || dia === 12 || dia === 13) {
+        return 'th';
+    }
+    var ultimoDigito = dia % 10;
+    switch (ultimoDigito) {
+        case 1:
+        return 'st';
+        case 2:
+        return 'nd';
+        case 3:
+        return 'rd';
+        default:
+        return 'th';
+    }
+}
 /*-----------------------------------------------*/
