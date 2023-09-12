@@ -14,11 +14,11 @@
         WindowMinWidth  = 0,
         WindowMinHeight = 0;
 
-    var Sources = ['http://10.0.3.14/MULTIMEDIA_DMO/ChannelsVideos/AAA.mp4',
-                  'http://10.0.3.14/MULTIMEDIA_DMO/ChannelsVideos/ABC.mp4',
-                  'http://10.0.3.14/MULTIMEDIA_DMO/ChannelsVideos/CN.mp4',
-                  'http://10.0.3.14/MULTIMEDIA_DMO/ChannelsVideos/CNM.mp4',
-                  'http://10.0.3.14/MULTIMEDIA_DMO/ChannelsVideos/ESPN.mp4'
+    var Sources = ['http://192.168.0.121/MULTIMEDIA_DMO/ChannelsVideos/AAA.mp4',
+                  'http://192.168.0.121/MULTIMEDIA_DMO/ChannelsVideos/ABC.mp4',
+                  'http://192.168.0.121/MULTIMEDIA_DMO/ChannelsVideos/CN.mp4',
+                  'http://192.168.0.121/MULTIMEDIA_DMO/ChannelsVideos/CNM.mp4',
+                  'http://192.168.0.121/MULTIMEDIA_DMO/ChannelsVideos/ESPN.mp4'
                  ];
 
     var IndexChannel = 0;
